@@ -1,6 +1,6 @@
 export default function SignIn() {
   return (
-    <div className="container row mx-auto">
+    <div className="container-fluid row mx-auto">
       <div className="col-sm-4 offset-4" style={styles.marginCostum}>
         <div className="text-center" style={{ marginBottom: "56px" }}>
           <h3>Welcome back!</h3>

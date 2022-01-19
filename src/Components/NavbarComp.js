@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 // import Basic from "./Formik";
 // import avatar from "./avatar.png";
+import { Link } from "react-router-dom";
 import logo from "./logo.png";
 
 export default function NavbarComp() {
