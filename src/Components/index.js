@@ -2,6 +2,7 @@ import bgImg from "./BG.png";
 
 export default function Home() {
   return (
+    
     <div className="container-fluid banner" style={styles.banner}>
       <div className="container bannerContent " style={styles.bannerContent}>
         <div className="textContent me-auto" style={styles.textContent}>
@@ -39,6 +40,8 @@ const styles = {
     backgroundImage: `url(${bgImg})`,
     backgroundSize: "cover",
     backgrounPosition: "center",
+    backgroundRepeat: "no-repeat",
+    position: "relative",
     height: "800px",
     color: "white",
   },
