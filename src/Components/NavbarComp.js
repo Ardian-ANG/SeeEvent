@@ -6,11 +6,12 @@ import logo from "./logo.png";
 export default function NavbarComp() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg mx-auto" style={{ backgroundColor: "#214457", height: "112px" }}>
+      <nav className="navbar sticky-top navbar-expand-lg mx-auto" style={{ backgroundColor: "#214457", height: "112px" }}>
         <div className="container">
+          <Link to='/'>
           <a className="navbar-brand" href="#">
             <img alt="logo SeeEvent" src={logo} width="auto" height="auto" />
-          </a>
+          </a></Link>
 
           <div className="collapse navbar-collapse">
             <div className="navbar-nav ms-auto">
