@@ -1,0 +1,33 @@
+.img-profile{
+   width:130px;
+   height:130px;
+   border-radius: 100px;
+   margin-top: 59px;
+   margin-bottom: 12px;
+}
+.profile-name{
+   margin-bottom:8px;
+}
+.profile-email{
+   margin-bottom:24px;
+}
+.sign-out-btn{
+   margin-bottom: 120px;
+}
+.btn-sign-out{
+   width:184px;
+   height:48px;
+   background-color: white;
+   border: 1px solid #214457;
+   border-radius:10px;
+}
+.btn-icon{
+   margin-right:25px;
+}
+.sign-out{
+   margin-right:18px;
+   margin-left:13px;
+   font-size:18px;
+   font-weight:700;
+   color:#214457;
+}

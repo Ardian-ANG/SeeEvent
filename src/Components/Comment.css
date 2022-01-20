@@ -1,0 +1,58 @@
+.section-title{
+   font-size:24px;
+   font-weight:700;
+}
+.img-user img{
+   width:40px;
+   height:40px;
+   border-radius: 100px;
+}
+.comment-section{
+   /* background-color: aquamarine; */
+   text-align: left;
+   width:60%;
+   margin-bottom: 25px;
+}
+.comment-wrapper{
+   /* background-color:sandybrown; */
+   margin-top:20px;
+   margin-bottom:20px;
+}
+/* .profile-user{
+   background-color:violet;
+} */
+.img-wrapper{
+   /* background-color:bisque; */
+   width:7%;
+}
+.profile-userName{
+   /* background-color:darkcyan; */
+   width:93%;
+}
+.user-name{
+   font-size:16px;
+   font-weight:700;
+}
+.post-date{
+   font-size:12px;
+   font-weight:400;
+}
+.comment-caption{
+   font-size:14px;
+   font-weight:400;
+   margin-top:10px;
+   margin-bottom:10px;
+}
+.comment-area{
+   width:60%;
+}
+.btn-comment{
+   height:48px;
+   background-color:#214457;
+   border-radius: 10px;
+}
+.btn-comment span{
+   color: white;
+   font: size 22px;
+   font-weight: 600;
+}

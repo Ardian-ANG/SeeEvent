@@ -1,33 +1,29 @@
-import Button from './Button'
 import search from './../Components/Assets/icons/search.png';
+import './Search.css'
 
 const Search = () => {
    return(
-      <div className="search d-flex align-items-center justify-content-end p-2 bg-light" style={{width:"704px", height:"56px", borderRadius:"99px"}}>
-         <img className="search-icon" src={search} alt="search-icon" style={{width:"28px", height:"28px"}}/>
-         <form className="d-flex align-items-center">
-            <input 
-               style={{width:"507px", height:"28px", fontSize:"20px", fontWeight:"400", border:"none"}}
-               className="form-control mx-3 bg-light" 
-               type="search" 
-               placeholder="Search events" 
-               aria-label="Search"
-            />
-            <Button 
-               name="Search" 
-               style={
-                  {
-                     width:"112px",
-                     height:"40px",
-                     backgroundColor:"#214457",
-                     color:"white", 
-                     borderRadius:"20px",
-                     fontSize:"16px",
-                     fontWeight:"700"
-                  }
-               }
-            />
-         </form>
+      <div className="search d-flex align-items-center p-2 bg-light">
+         
+            <div className="logo-wrapper">
+               <img className="search-icon" src={search} alt="search-icon"/>
+            </div>
+            <div className="input-wrapper">
+               <form className="form-input d-flex align-items-center">
+                  <input 
+                     className="form-control mx-2 px-0 bg-light" 
+                     type="search" 
+                     placeholder="Search events" 
+                     aria-label="Search"
+               />
+               </form>
+            </div>
+            <div className="button-wrapper d-flex justify-content-end">
+               <button type="button" className="button-src" >
+                  <span>Search</span>
+               </button>
+            </div>
+         
       </div>
    )
 }
