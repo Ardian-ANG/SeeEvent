@@ -1,11 +1,13 @@
 import bgImg from "./Assets/img/banner.png";
+import Search from "./Search";
+import styles from "./Home.module.css";
 
 export default function Home() {
   return (
-    <div className="container-fluid banner" style={styles.banner}>
-      <div className="container bannerContent " style={styles.bannerContent}>
-        <div className="textContent me-auto" style={styles.textContent}>
-          <h1 style={{ fontSize: "56px" }}>
+    <div className={`container-fluid ${styles.banner}`} style={{ backgroundImage: `url(${bgImg})` }}>
+      <div className={`container ${styles.banner_content}`}>
+        <div className="textContent me-auto" style={{ width: "496px", height: "247px" }}>
+          <h1 className={styles.title}>
             <span style={{ color: "#F2D555" }}>Create </span>or
             <span style={{ color: "#F2D555" }}> Find</span> <br />
             interesting
@@ -15,42 +17,9 @@ export default function Home() {
             The world
           </h1>
         </div>
-        <div className="search">
-          <form>
-            <input
-              className="form-control"
-              type="search"
-              placeholder="Search"
-              style={{
-                width: "704px",
-                height: "56px",
-                borderRadius: "99px",
-              }}
-            />
-          </form>
-        </div>
+        <Search />
       </div>
     </div>
   );
 }
 
-const styles = {
-  banner: {
-    backgroundImage: `url(${bgImg})`,
-    backgroundSize: "cover",
-    backgrounPosition: "center",
-    height: "800px",
-    color: "white",
-  },
-  bannerContent: {
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-  },
-  textContent: {
-    width: "496px",
-    height: "247px",
-    paddingTop: "8px",
-    // paddingLeft: "68px",
-  },
-};

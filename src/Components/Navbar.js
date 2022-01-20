@@ -1,5 +1,4 @@
-// import Basic from "./Formik";
-// import avatar from "./Assets/icans/avatar.png";
+// import avatar from "./Assets/icons/avatar.png";
 import { Link } from "react-router-dom";
 import logoNav from "./Assets/logos/LogoSencondary.png";
 import styles from "./Navbar.module.css";
@@ -14,7 +13,7 @@ export default function Navbar() {
           </Link>
 
           <div className="collapse navbar-collapse">
-            <div className="navbar-nav ms-auto">
+            <div className="navbar-nav ms-auto" style={{fontFamily: 'Noto Sans'}}>
               <Link to="/signUp" className="nav-link" style={{ textDecoration: "none", marginRight: "1.5rem", color: "white" }}>
                 Sign Up
               </Link>
@@ -23,14 +22,14 @@ export default function Navbar() {
                 Sign In
               </Link>
               {/* sudah login */}
-              {/* <a className="navbar-brand" href="#">
+              {/* <a className="navbar-brand" href="/">
                 <img alt="logo SeeEvent" src={avatar} width="auto" height="auto" />
               </a> */}
             </div>
           </div>
         </div>
       </nav>
-      {/* <Basic/> */}
+
     </>
   );
 }

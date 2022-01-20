@@ -1,8 +1,13 @@
 import { useFormik } from "formik";
+import { useState } from "react";
 import * as Yup from 'yup'
+import show from '../../Components/Assets/icons/eye.png'
+import hiden from '../../Components/Assets/icons/eye-off.png'
 
 
 export default function SignUp() {
+  const [hide, setHide] = useState(false)
+  const [hideCom, setHideCom] = useState(false)
   const doRegister = (values)=>{
     console.log('form values',values);
     setTimeout(() => {
@@ -49,10 +54,10 @@ export default function SignUp() {
     <div className="container-fluid row mx-auto">
       <div className="col-sm-4 mx-auto" style={{margin: '100px 0px'}}>
         <div className="text-center" style={{ marginBottom: '56px' }}>
-          <h3>Join us!</h3>
+          <h3 style={{fontSize: '40px', color: '#373737'}}>Join us!</h3>
         </div>
 
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} style={{fontFamily: 'Noto Sans'}}>
           <div className="mb-3">
             <input 
             type="text" 
@@ -83,23 +88,35 @@ export default function SignUp() {
           {formik.touched.email && formik.errors.email && 
           <div className="error text-danger" style={{fontSize: '12px'}}>{formik.errors.email}</div>}
           </div>
-          <div className="mb-3">
-            <input 
-            type="password" 
-            name="password"
-            {...formik.getFieldProps('password')}
-            className="form-control" 
-            placeholder="Password" />
+          <div className=" mb-3">
+            <div className="password d-flex border" style={{borderRadius: '5px'}}>
+              <input 
+              type={hide ? 'text': 'password'} 
+              name="password"
+              {...formik.getFieldProps('password')}
+              className="form-control" 
+              placeholder="Password" 
+              style={{border: 'none'}}/>
+              <button onClick={(e)=> {e.preventDefault();setHide(!hide)}} style={{border: 'none'}}>
+               <img src={hide ? hiden: show} style={{width: 'auto', height: '25px', margin: 'auto', marginRight: '5px'}}/>
+              </button>
+            </div>
           {formik.touched.password && formik.errors.password && 
           <div className="error text-danger" style={{fontSize: '12px'}}>{formik.errors.password}</div>}
           </div>
           <div className="mb-3">
-            <input 
-            type="password" 
-            name="confirmPassword" 
-            {...formik.getFieldProps('confirmPassword')}
-            className="form-control" 
-            placeholder="Confirm Password" />
+            <div className="password d-flex border" style={{borderRadius: '5px'}}>
+              <input 
+              type={hideCom? 'text': 'password'} 
+              name="confirmPassword" 
+              {...formik.getFieldProps('confirmPassword')}
+              className="form-control" 
+              placeholder="Confirm Password" 
+              style={{border: 'none'}}/>
+              <button onClick={(e)=> {e.preventDefault();setHideCom(!hideCom)}} style={{border: 'none'}}>
+               <img src={hideCom ? hiden: show} style={{width: 'auto', height: '25px', margin: 'auto', marginRight: '5px'}}/>
+              </button>
+            </div>
           {formik.touched.confirmPassword && formik.errors.confirmPassword && 
           <div className="error text-danger" style={{fontSize: '12px'}}>{formik.errors.confirmPassword}</div>}
           </div>
@@ -109,7 +126,7 @@ export default function SignUp() {
             style={{
               width: "100%",
               backgroundColor: "#214457",
-              borderRadius: "10px",
+              borderRadius: "5px",
               color: "white",
             }}
           >
