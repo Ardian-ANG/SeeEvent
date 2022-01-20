@@ -13,12 +13,12 @@ export default function Navbar() {
           </Link>
 
           <div className="collapse navbar-collapse">
-            <div className="navbar-nav ms-auto" style={{fontFamily: 'Noto Sans'}}>
-              <Link to="/signUp" className="nav-link" style={{ textDecoration: "none", marginRight: "1.5rem", color: "white" }}>
+            <div className="navbar-nav ms-auto" style={{gap: '1.5rem'}}>
+              <Link to="/signUp" className="nav-link text-white">
                 Sign Up
               </Link>
 
-              <Link to="/signIn" className="nav-link" style={{ textDecoration: "none", color: "white" }}>
+              <Link to="/signIn" className="nav-link text-white">
                 Sign In
               </Link>
               {/* sudah login */}

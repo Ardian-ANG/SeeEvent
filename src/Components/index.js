@@ -1,6 +1,6 @@
 import bgImg from "./Assets/img/banner.png";
 import Search from "./Search";
-import styles from "./Home.module.css";
+import styles from "./index.module.css";
 
 export default function Home() {
   return (
@@ -22,4 +22,3 @@ export default function Home() {
     </div>
   );
 }
-

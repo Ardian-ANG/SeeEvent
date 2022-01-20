@@ -1,0 +1,19 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  color: white;
+}
+
+.banner_content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 56px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: bold;
+  line-height: 61.6px;
+}
