@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp";
 import SignIn from "./Pages/SignIn";
-import Search from "./Components/Search";
-import Footer from "./Components/Footer";
-import NavbarComp from "./Components/NavbarComp";
+// import Search from "./Components/Search";
+// import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
 import "./App.css";
 import Home from "./Components";
 
@@ -11,14 +11,14 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavbarComp />
+        <Navbar />
         <Routes>
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/signIn" element={<SignIn />} />
-          <Route path="/search" element={<Search />} />
+          {/* <Route path="/search" element={<Search />} /> */}
           <Route path="/" element={<Home />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );
