@@ -1,12 +1,15 @@
-// import avatar from "./Assets/icons/avatar.png";
-import { Link } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
 import logoNav from "./Assets/logos/LogoSencondary.png";
 import styles from "./Navbar.module.css";
+// import avatar from "./Assets/icons/avatar.png";
 
 export default function Navbar() {
+  const location = useLocation()
   return (
     <>
-      <nav className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`}>
+      <nav className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`} 
+      style={{backgroundColor: location.pathname === '/'? 'transparent': '#214457'}}>
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img alt="logo SeeEvent" src={logoNav} width="auto" height="auto" />

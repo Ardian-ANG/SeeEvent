@@ -3,6 +3,7 @@
   background-position: center;
   height: 800px;
   color: white;
+  margin-top: -112px;
 }
 
 .banner_content {
@@ -16,4 +17,5 @@
   font-style: normal;
   font-weight: bold;
   line-height: 61.6px;
+  letter-spacing: 2px;
 }
