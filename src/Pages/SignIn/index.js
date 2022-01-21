@@ -34,6 +34,11 @@ export default function SignIn() {
     onSubmit: doLogin
   });
   console.log(formik);
+  const isError = { 
+    email: formik.touched.email && formik.errors.email, 
+    password: formik.touched.password && formik.errors.password
+  }
+
   return (
     <div className={`${styles.cotainer}container-fluid row mx-auto`}>
       <div className="col-sm-4 mx-auto" style={{margin: '100px 0px'}}>
@@ -47,25 +52,25 @@ export default function SignIn() {
             type="text" 
             name="email" 
             {...formik.getFieldProps('email')}
-            className="form-control" 
+            className={`${isError.email && 'border-danger'} form-control`} 
             placeholder="Email" />
-          {formik.touched.email && formik.errors.email && 
+          {isError.email && 
           <div className={styles.error}>{formik.errors.email}</div>}
           </div>
           <div className=" mb-3">
-            <div className="password d-flex border" style={{borderRadius: '5px'}}>
+            <div className={`password d-flex border ${isError.password && 'border border-danger'}`} style={{borderRadius: '5px'}}>
               <input 
               type={hide? 'text': 'password'} 
               name="password"
               {...formik.getFieldProps('password')}
-              className="form-control" 
+              className='form-control'
               placeholder="Password" 
               style={{border: 'none'}}/>
-              <button onClick={(e)=> {e.preventDefault();setHide(!hide)}} style={{border: 'none', background: 'none'}}>
-               <img src={hide ? hiden: show} style={{width: 'auto', height: '25px', marginRight: '5px'}}/>
+              <button className={styles.btn_eye} onClick={(e)=> {e.preventDefault();setHide(!hide)}}>
+               <img className={styles.icon_eye} src={hide ? hiden: show} />
               </button>
             </div>
-          {formik.touched.password && formik.errors.password && 
+          { isError.password && 
           <div className={styles.error}>{formik.errors.password}</div>}
           </div>
           <button

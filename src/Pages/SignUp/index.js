@@ -51,6 +51,13 @@ export default function SignUp() {
     onSubmit: doRegister
   });
   console.log(formik);
+  const isError = { 
+    firstName: formik.touched.firstName && formik.errors.firstName,
+    lastName: formik.touched.lastName && formik.errors.lastName,
+    email: formik.touched.email && formik.errors.email, 
+    password: formik.touched.password && formik.errors.password,
+    confirmPassword: formik.touched.confirmPassword && formik.errors.confirmPassword
+  }
   return (
     <div className={`${styles.container} container-fluid row mx-auto`}>
       <div className="col-sm-4 mx-auto" style={{margin: '100px 0px'}}>
@@ -64,61 +71,57 @@ export default function SignUp() {
             type="text" 
             name="firstName" 
             {...formik.getFieldProps('firstName')}
-            className="form-control" 
+            className={`${isError.firstName && 'border-danger'} form-control`}
             placeholder="Firs Name"/>
-          {formik.touched.firstName && formik.errors.firstName && 
-          <div className={styles.error}>{formik.errors.firstName}</div>}
+          { isError.firstName && <div className={styles.error}>{formik.errors.firstName}</div>}
           </div>
           <div className="mb-3">
             <input 
             type="text" 
             name="lastName" 
             {...formik.getFieldProps('lastName')}
-            className="form-control" 
+            className={`${isError.lastName && 'border-danger'} form-control`}
             placeholder="Last Name" />
-          {formik.touched.lastName && formik.errors.lastName && 
-          <div className={styles.error}>{formik.errors.lastName}</div>}
+          { isError.lastName && <div className={styles.error}>{formik.errors.lastName}</div>}
           </div>
           <div className="mb-3">
             <input 
             type="text" 
             name="email" 
             {...formik.getFieldProps('email')}
-            className="form-control" 
+            className={`${isError.email && 'border-danger'} form-control`}
             placeholder="Email" />
-          {formik.touched.email && formik.errors.email && 
-          <div className={styles.error}>{formik.errors.email}</div>}
+          {isError.email && <div className={styles.error}>{formik.errors.email}</div>}
           </div>
           <div className=" mb-3">
-            <div className="password d-flex border" style={{borderRadius: '5px'}}>
+            <div className={`password d-flex border ${isError.password && 'border border-danger'}`} style={{borderRadius: '5px'}}>
               <input 
               type={hide ? 'text': 'password'} 
               name="password"
               {...formik.getFieldProps('password')}
-              className="form-control" 
+              className={`${isError.password && 'border-danger'} form-control`}
               placeholder="Password" 
               style={{border: 'none'}}/>
-              <button onClick={(e)=> {e.preventDefault();setHide(!hide)}} style={{border: 'none', background: 'none'}}>
-               <img src={hide ? hiden: show} style={{width: 'auto', height: '25px', marginRight: '5px'}}/>
+              <button className={styles.btn_eye} onClick={(e)=> {e.preventDefault();setHide(!hide)}} >
+               <img className={styles.icon_eye} src={hide ? hiden: show}/>
               </button>
             </div>
-          {formik.touched.password && formik.errors.password && 
-          <div className={styles.error}>{formik.errors.password}</div>}
+          {isError.password && <div className={styles.error}>{formik.errors.password}</div>}
           </div>
           <div className="mb-3">
-            <div className="password d-flex border" style={{borderRadius: '5px'}}>
+            <div className={`password d-flex border ${isError.confirmPassword && 'border border-danger'}`} style={{borderRadius: '5px'}}>
               <input 
               type={hideCom? 'text': 'password'} 
               name="confirmPassword" 
               {...formik.getFieldProps('confirmPassword')}
-              className="form-control" 
+              className='form-control'
               placeholder="Confirm Password" 
               style={{border: 'none'}}/>
-              <button onClick={(e)=> {e.preventDefault();setHideCom(!hideCom)}} style={{border: 'none', background: 'none'}}>
-               <img src={hideCom ? hiden: show} style={{width: 'auto', height: '25px', marginRight: '5px'}}/>
+              <button className={styles.btn_eye} onClick={(e)=> {e.preventDefault();setHideCom(!hideCom)}}>
+               <img className={styles.icon_eye} src={hideCom ? hiden: show} />
               </button>
             </div>
-          {formik.touched.confirmPassword && formik.errors.confirmPassword && 
+          {isError.confirmPassword && 
           <div className={styles.error}>{formik.errors.confirmPassword}</div>}
           </div>
           <button
