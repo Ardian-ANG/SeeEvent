@@ -22,29 +22,29 @@ import CreateEvent from "./Pages/Event/CreateEvent";
 // import ButtonSearch from './Components/ButtonSearch';
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        {/* <Navbar /> */}
-        {/* <SearchBar/> */}
-        <SearchPage />
-        {/* <Routes>
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/signIn" element={<SignIn />} />
-            <Route path="/" element={<Home />} />
-         </Routes> */}
-        {/* <Comment/> */}
-        <CreateEvent />
-        <DesignEvent />
-        <EventCategory />
-        <AttendEvent />
-        <EventDetail />
-        {/* <ErrorPage /> */}
-        {/* <Search/> */}
+   return (
+      <div>
+         <BrowserRouter>
+         <Navbar />
+         <SearchBar/>
+         <SearchPage />
+         <Routes>
+               <Route path="/signUp" element={<SignUp />} />
+               <Route path="/signIn" element={<SignIn />} />
+               <Route path="/" element={<Home />} />
+            </Routes>
+         <Comment/>
+         <CreateEvent />
+         <DesignEvent />
+         <EventCategory />
+         <AttendEvent />
+         <EventDetail />
+         <ErrorPage />
+         <Search/>
 
-        {/* <Footer /> */}
-      </BrowserRouter>
-    </div>
-  );
+         <Footer />
+         </BrowserRouter>
+      </div>
+   );
 }
 export default App;
