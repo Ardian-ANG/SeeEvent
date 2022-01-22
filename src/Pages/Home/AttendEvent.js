@@ -1,6 +1,6 @@
-import styles from "./AttendEvent.module.css";
-import Share from "./Assets/icons/Icon Share.png";
-import Save from "./Assets/icons/Icon Save.png";
+import styles from "./../../Styling/AttendEvent.module.css";
+import Share from "./../../Assets/icons/Icon Share.png";
+import Save from "./../../Assets/icons/Icon Save.png";
 
 const attendEvent = () => {
   return (

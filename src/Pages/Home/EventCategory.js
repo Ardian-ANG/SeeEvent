@@ -1,4 +1,4 @@
-import styles from "./EventCategory.module.css";
+import styles from "./../../Styling/EventCategory.module.css";
 
 const EventCategory = () => {
   return (

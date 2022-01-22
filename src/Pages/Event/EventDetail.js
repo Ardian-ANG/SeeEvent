@@ -1,8 +1,8 @@
-import styles from "./EventDetail.module.css";
-import Share from "./Assets/icons/Icon Share.png";
-import Save from "./Assets/icons/Icon Save.png";
-import Calender from "./Assets/icons/calendar.png";
-import Profile from "./Assets/pictures/profile.jpeg";
+import styles from "./../../Styling/EventDetail.module.css";
+import Share from "./../../Assets/icons/Icon Share.png";
+import Save from "./../../Assets/icons/Icon Save.png";
+import Calender from "./../../Assets/icons/calendar.png";
+import Profile from "./../../Assets/img/profile.jpeg";
 
 const EventDetail = () => {
   return (

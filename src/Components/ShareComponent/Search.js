@@ -1,5 +1,5 @@
-import search from "./../Components/Assets/icons/search.png";
-import style from "./Search.module.css";
+import search from "./../../Assets/icons/search.png";
+import style from "./../../Styling/Search.module.css";
 
 const Search = () => {
   return (

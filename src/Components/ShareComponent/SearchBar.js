@@ -1,5 +1,5 @@
-import search from './../Components/Assets/icons/search.png';
-import style from './SearchBar.module.css'
+import search from './../../Assets/icons/search.png';
+import style from './../../Styling/SearchBar.module.css'
 
 const SearchBar = () => {
    return(
