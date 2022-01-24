@@ -1,4 +1,4 @@
-import "./ButtonSearch.css";
+import "./../../Styling/ButtonSearch.css";
 
 const ButtonSearch = (props) => {
   return (

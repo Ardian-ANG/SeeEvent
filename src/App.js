@@ -9,7 +9,6 @@ import Navbar from "./Components/NavBar/Header/Navbar";
 import SignUp from "./Pages/SignUp/SingUp";
 import SignIn from "./Pages/SignIn/SignIn";
 import Comment from "./Pages/Event/Comment";
-import Footer from "./Components/NavBar/Footer/Footer";
 import SearchPage from "./Pages/Search/SearchPage";
 import SearchBar from "./Components/ShareComponent/SearchBar";
 import DesignEvent from "./Pages/Home/DesignEvent";
@@ -38,23 +37,26 @@ function App() {
               </PrivateRoute>
             }
           />
-          {/* <Navbar /> */}
-          {/* <SearchBar/> */}
-          {/* <SearchPage /> */}
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signIn" element={<SignIn />} />
-          {/* <Route path="/" element={<Home />} /> */}
+          <Router>
+            <Navbar />
+            {/* <SearchBar/> */}
+            <SearchPage />
+            <Routes>
+              <Route path="/signUp" element={<SignUp />} />
+              <Route path="/signIn" element={<SignIn />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+            <Comment />
+            <CreateEvent />
+            <DesignEvent />
+            <EventCategory />
+            <AttendEvent />
+            <EventDetail />
+            <ErrorPage />
+            <Search />
+            <Footer />
+          </Router>
         </Routes>
-        {/* <Comment/>
-        <CreateEvent />
-        <DesignEvent />
-        <EventCategory />
-        <AttendEvent />
-        {/* <EventDetail /> */}
-        {/* <ErrorPage /> */}
-        {/* <Search/> */}
-
-        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );

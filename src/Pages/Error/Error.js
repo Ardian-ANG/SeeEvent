@@ -1,4 +1,4 @@
-import styles from "./ErrorPage.module.css";
+import styles from "./../../Styling/ErrorPage.module.css";
 
 const ErrorPage = () => {
   return (

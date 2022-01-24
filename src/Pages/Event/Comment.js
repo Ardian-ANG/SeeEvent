@@ -1,6 +1,6 @@
-import MessageCircle from './Assets/icons/MessageCircle.png';
-import photo from './photo.jpg';
-import style from './Comment.module.css';
+import MessageCircle from './../../Assets/icons/MessageCircle.png';
+import photo from './../../Assets/img/photo.jpg';
+import style from './../../Styling/Comment.module.css';
 
 const Comment = () => {
    return (

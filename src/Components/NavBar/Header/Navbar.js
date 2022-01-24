@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import logoNav from "../../../Assets/logos/LogoSencondary.png";
-import styles from "./Navbar.module.css";
+import logoNav from "./../../../Assets/logos/LogoSencondary.png";
+import styles from "./../../../Styling/Navbar.module.css";
 // import avatar from "./Assets/icons/avatar.png";
 
 export default function Navbar() {
