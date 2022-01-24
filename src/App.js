@@ -1,6 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { PrivateRoute } from "./Components/Route/PrivateRoute";
+import { useSelector } from "react-redux";
 
 import Home from "./Pages/Home/Home";
 import Navbar from "./Components/NavBar/Header/Navbar";
@@ -15,30 +17,40 @@ import AttendEvent from "./Pages/Home/AttendEvent";
 import EventCategory from "./Pages/Home/EventCategory";
 import ErrorPage from "./Pages/Error/Error";
 import Search from "./Components/ShareComponent/Search";
-import Footer from "./Components/NavBar/Footer/Footer";
+// import Footer from "./Components/NavBar/Footer/Footer";
 import EventDetail from "./Pages/Event/EventDetail";
 import CreateEvent from "./Pages/Event/CreateEvent";
 // import Search from './Components/Search';
 // import ButtonSearch from './Components/ButtonSearch';
 
 function App() {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
   return (
     <div>
       <BrowserRouter>
-        {/* <Navbar /> */}
-        {/* <SearchBar/> */}
-        <SearchPage />
-        {/* <Routes>
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/signIn" element={<SignIn />} />
-            <Route path="/" element={<Home />} />
-         </Routes> */}
-        {/* <Comment/> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PrivateRoute auth={{ isAuthenticated: userInfo ? true : false }}>
+                <Home />
+              </PrivateRoute>
+            }
+          />
+          {/* <Navbar /> */}
+          {/* <SearchBar/> */}
+          {/* <SearchPage /> */}
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn />} />
+          {/* <Route path="/" element={<Home />} /> */}
+        </Routes>
+        {/* <Comment/>
         <CreateEvent />
         <DesignEvent />
         <EventCategory />
         <AttendEvent />
-        <EventDetail />
+        {/* <EventDetail /> */}
         {/* <ErrorPage /> */}
         {/* <Search/> */}
 
