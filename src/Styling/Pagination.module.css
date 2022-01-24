@@ -1,0 +1,13 @@
+.result_filter{
+   /* background-color: burlywood; */
+   flex-wrap: wrap;
+}
+.card_event{
+   width:23%;
+}
+.img_card{
+   height:150px;
+}
+.badge{
+   background-color: #F0F2E9;
+}

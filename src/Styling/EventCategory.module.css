@@ -1,0 +1,95 @@
+.main_container {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+}
+.wrapper_container {
+  width: 100%;
+  height: auto;
+  background: #eceeef;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.category_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-top: 5%;
+}
+.content_header {
+  color: #373737;
+  font-size: 40px;
+}
+.top_button {
+  display: flex;
+  justify-content: space-evenly;
+}
+.first_button,
+.second_button,
+.third_button,
+.fourth_button,
+.fifth_button,
+.sixth_button,
+.sevent_button {
+  background: #f8f8f8;
+  border: 1px solid #214457;
+  box-sizing: border-box;
+  font-weight: 600;
+  position: relative;
+  outline: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 68px;
+  width: 248px;
+  transition-duration: 0.4s;
+}
+.first_button:hover {
+  background: #f2d555;
+}
+.second_button:hover {
+  background: #f2d555;
+}
+.third_button:hover {
+  background: #f2d555;
+}
+.fourth_button:hover {
+  background: #f2d555;
+}
+.fifth_button:hover {
+  background: #f2d555;
+}
+.sixth_button:hover {
+  background: #f2d555;
+}
+.sevent_button:hover {
+  background: #f2d555;
+}
+/* button:hover {
+  background: #f2d555;
+} */
+.first_category,
+.second_category,
+.third_category,
+.fourth_category,
+.fifth_category,
+.sixth_category,
+.seventh_category {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 10px;
+}
+.bot_button {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}

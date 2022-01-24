@@ -1,0 +1,66 @@
+.main_container {
+  width: auto;
+  height: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.wrapper_container {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  background-color: antiquewhite;
+}
+.title_container {
+  display: flex;
+  padding-top: 15%;
+  margin-bottom: 20%;
+  justify-content: center;
+  align-content: center;
+}
+.title {
+  font-weight: 700;
+}
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.upload_container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5%;
+}
+.upload {
+  border: 2px solid #214457;
+  width: 45%;
+  display: flex;
+  gap: 25%;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.input_container {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.date_container {
+  display: flex;
+  width: 100%;
+}
+.date_input {
+  min-width: 95%;
+}
+.date_icon {
+  position: relative;
+  justify-content: flex-start;
+}
+.title_input,
+.date_input,
+.category_input,
+.detail_input {
+  border-radius: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}

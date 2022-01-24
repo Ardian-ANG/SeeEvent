@@ -1,0 +1,27 @@
+.cotainer {
+  font-family: "Noto Sans";
+}
+.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 44px;
+  color: #373737;
+}
+.btn_submit {
+  width: 100%;
+  background-color: #214457;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  height: 36px;
+}
+
+.error {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #D74545;
+}

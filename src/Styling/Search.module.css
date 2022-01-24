@@ -1,0 +1,169 @@
+.search {
+  width: 50%;
+  height: 56px;
+  border-radius: 99px;
+  margin-right: 108px;
+}
+<<<<<<< HEAD:src/Components/Search.css
+.search.icon {
+  width: 28px;
+  height: 28px;
+}
+.form-input input {
+  height: 28px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  border: none;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.logo-wrapper {
+  width: 10%;
+}
+.input-wrapper {
+  width: 70%;
+}
+.button-wrapper {
+  width: 20%;
+  height: 40px;
+}
+.button-src {
+  width: 100%;
+  background-color: #214457;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+=======
+.searchIcon{
+   width:28px;
+   height:28px;
+}
+.input{
+   height:28px;
+   font-size:20px;
+   font-weight:400;
+   text-align:left;
+   border:none;
+}
+.input:focus{
+   outline: none;
+   box-shadow: none;
+}
+.logoWrapper{
+   width:10%;
+}
+.inputWrapper{
+   width:70%;
+}
+.buttonWrapper{
+   width:20%;
+   height:40px;
+}
+.buttonSrc{
+   width:100%;
+   background-color:#214457;
+   border:none;
+   border-radius:20px;
+   font-size:16px;
+   font-weight:700;
+   color:white;
+>>>>>>> 147836ad2b4acfa30f982126dfd63b5b0413ecf4:src/Styling/Search.module.css
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+<<<<<<< HEAD:src/Components/Search.css
+@media (max-width: 768px) {
+  .search {
+    width: 70%;
+    height: 40px;
+  }
+  .search.icon {
+    width: 25px;
+    height: 25px;
+  }
+  .form-input input {
+    font-size: 16px;
+  }
+  .button-wrapper {
+    width: 20%;
+    height: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .search {
+    width: 95%;
+    height: 30px;
+  }
+  .search.icon {
+    width: 15px;
+    height: 15px;
+  }
+  .form-input input {
+    font-size: 14px;
+    height: 25px;
+    font-weight: 400;
+  }
+  .input-wrapper {
+    width: 80%;
+  }
+  .button-wrapper {
+    width: 20%;
+    height: 25px;
+  }
+  .button-src {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+=======
+@media (max-width:768px) {
+   .search{
+      width:70%;
+      height:40px;
+   }
+   .searchIcon{
+      width:25px;
+      height:25px;
+   }
+   .formInput input{
+      font-size:16px;
+   }
+   .buttonWrapper{
+      width:20%;
+      height:30px;
+   }
+}
+@media (max-width:425px) {
+   .search{
+      width:95%;
+      height:30px;
+   }
+   .searchIcon{
+      width:15px;
+      height:15px;
+   }
+   .formInput input{
+      font-size:14px;
+      height:25px;
+      font-weight:400;
+   }
+   .inputWrapper{
+      width:80%;
+   }
+   .buttonWrapper{
+      width:20%;
+      height:25px;
+   }
+   .buttonSrc{
+      font-size:14px;
+      font-weight:400;
+   }
+}
+>>>>>>> 147836ad2b4acfa30f982126dfd63b5b0413ecf4:src/Styling/Search.module.css
