@@ -1,5 +1,5 @@
-import style from './Pagination.module.css';
-import photo from './photo.jpg';
+import style from './../../Styling/Pagination.module.css';
+import photo from './../../Assets/img/photo.jpg';
 
 const Pagination = () =>{
    return (

@@ -1,6 +1,6 @@
-import styles from "./DesignEvent.module.css";
-import Share from "./Assets/icons/Icon Share.png";
-import Save from "./Assets/icons/Icon Save.png";
+import styles from "./../../Styling/DesignEvent.module.css";
+import Share from "./../../Assets/icons/Icon Share.png";
+import Save from "./../../Assets/icons/Icon Save.png";
 
 const DesignEvent = () => {
   return (

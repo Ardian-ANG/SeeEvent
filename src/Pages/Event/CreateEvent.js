@@ -1,8 +1,8 @@
-import styles from "./CreateEvent.module.css";
-import Default from "./Assets/pictures/create event default.png";
-import Upload from "./Assets/icons/upload.png";
-import BottomArrow from "./Assets/icons/bottom arrow.png";
-import Calender from "./Assets/icons/calendar.png";
+import styles from "./../../Styling/CreateEvent.module.css";
+import Default from "./../../Assets/img/create event default.png";
+import Upload from "./../../Assets/icons/upload.png";
+import BottomArrow from "./../../Assets/icons/bottom arrow.png";
+import Calender from "./../../Assets/icons/calendar.png";
 
 const CreateEvent = () => {
   return (

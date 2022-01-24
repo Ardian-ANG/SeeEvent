@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import * as Yup from 'yup'
-import show from '../../Components/Assets/icons/eye.png'
-import hiden from '../../Components/Assets/icons/eye-off.png'
-import styles from './index.module.css'
+import show from '../../Assets/icons/eye.png'
+import hiden from '../../Assets/icons/eye-off.png'
+import styles from './../../Styling/SignIn.module.css'
 
 
 export default function SignIn() {

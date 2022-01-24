@@ -1,5 +1,5 @@
-import notFound from "./Assets/img/notFound.png";
-import style from "./NotFound.module.css";
+import notFound from "./../../Assets/img/notFound.png";
+import style from "./../../Styling/NotFound.module.css";
 
 const NotFound = () => {
   return (

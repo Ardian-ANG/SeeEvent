@@ -1,6 +1,6 @@
-import bgImg from "./Assets/img/banner.png";
+import bgImg from "./../../Assets/img/banner.png";
 import Search from "../../Components/ShareComponent/Search";
-import styles from "./index.module.css";
+import styles from "./../../Styling/index.module.css";
 
 export default function Home() {
   return (

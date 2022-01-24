@@ -1,4 +1,4 @@
-import style from "./SearchPage.module.css";
+import style from "./../../Styling/SearchPage.module.css";
 import Pagination from "./Pagination";
 import NotFind from "./NotFound";
 

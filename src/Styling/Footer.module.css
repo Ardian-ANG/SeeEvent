@@ -4,31 +4,31 @@
 }
 /* .footer-content{
 } */
-.footer-caption{
+.footer_caption{
    margin: 16px 0px 32px 0px;
    font-size:16px;
    font-weight:400;
    color:#F8F8F8;
 }
-.social-media{
+.social_media{
       width:176px; 
       height:32px; 
       margin-top:8px;
 }
-.follow-us{
+.follow_us{
    font-size:16px;
    font-weight:700;
    color:#F8F8F8;
 }
-.footer-right{
+.footer_right{
    justify-content:space-evenly;
 }
-.links, .top-categories, .contact-us{
+.links, .top_categories, .contact_us{
    font-size:18px;
    font-weight:700;
    color:#F8F8F8;
 }
-.link-list, .link-categories, .address{
+.link_list, .link_categories, .address{
    margin-top:16px;
 }
 ul{
@@ -50,83 +50,82 @@ ul li a{
    font-weight:400;
    color:#F8F8F8;
 }
-.copy-right{
-   margin:0 108px 48px 108px;
+.copy_right{
    font-size:14px;
    font-weight:400;
    color:#F8F8F8;
 }
-.terms-cond a{
+.terms_cond a{
    margin-left: 24px;
    text-decoration: none;
    color:#F8F8F8;
    text-align: right;
 }
 @media(max-width:768px){
-   .footer-content{
+   .footer_content{
       margin: 15px 20px 15px 20px;
    }
-   .footer-left{
+   .footer_left{
       width:30%
    }
-   .footer-right{
+   .footer_right{
       width:70%;
    }
-   .footer-logo img{
+   .footer_logo img{
       width: 80%;
    }
-   .links, .top-categories, .contact-us{
+   .links, .top_categories, .contact_us{
       font-size:16px;
       font-weight:400;
    }
-   .footer-right{
+   .footer_right{
    text-align:right;
    }
-   .footer-caption, ul li a, .address p{
+   .footer_caption, ul li a, .address p{
       font-size:12px;
    }
-   .copy-right{
+   .copy_right{
       margin:0 20px 15px 20px;
       font-size: 12px;
    }
 }
 @media(max-width:425px){
-   .footer-content{
+   .footer_content{
       margin: 15px 20px 15px 20px;
    }
-   .footer-left, .footer-right{
+   .footer_left, .footer_right{
       width:100%;
       padding:0;
    }
-   .links, .top-categories, .contact-us{
+   .links, .top_categories, .contact_us{
       font-size:14px;
       font-weight:400;
    }
-   .footer-right{
+   .footer_right{
       margin-top: 25px;
       justify-content: space-between;
    }
-   .footer-caption, ul li a, .address p{
+   .footer_caption, ul li a, .address p{
       font-size:10px;
    }
-   .follow-us{
+   .follow_us{
       font-size:14px;
       font-weight:400;
    }
-   .copy-right{
+   .copy_right{
       margin:0 15px 20px 15px;
       font-size: 10px;
    }
-   .footer-content{
+   .footer_content{
       flex-direction: column;
    }
-   .footer-left, .footer-right{
+   .footer_left, .footer_right{
       width:100%;
    }
-   .copy-right-capt, .terms{
+   .copy_right_capt, .terms{
       padding:0;
    }
-   .terms-cond a{
+   .terms_cond a{
       text-align: left;
       margin-left: 7px;
    }
