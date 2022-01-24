@@ -5,8 +5,8 @@ import styles from "./index.module.css";
 export default function Home() {
   return (
     <div className={`container-fluid ${styles.banner}`} style={{ backgroundImage: `url(${bgImg})` }}>
-      <div className={`container ${styles.banner_content}`}>
-        <div className="textContent me-auto" style={{ width: "496px", height: "247px" }}>
+      <div className={`container ${styles.banner_content}`} style={{ maxWidth: "100%" }}>
+        <div className="textContent me-auto" style={{ marginLeft: "112px" }}>
           <h1 className={styles.title}>
             <span style={{ color: "#F2D555" }}>Create </span>or
             <span style={{ color: "#F2D555" }}> Find</span> <br />

@@ -4,16 +4,32 @@ import * as Yup from 'yup'
 import show from '../../Components/Assets/icons/eye.png'
 import hiden from '../../Components/Assets/icons/eye-off.png'
 import styles from './index.module.css'
+import axios from "axios";
+
+
 
 
 export default function SignIn() {
   const [hide, setHide] = useState(false)
-  const doLogin = (values)=>{
+
+  const doLogin = async (values)=>{
     console.log('form values',values);
-    setTimeout(() => {
+    const data = {
+      email: values.email,
+      password: values.password
+    }
+
+    localStorage.setItem('data', JSON.stringify(data))
+
+    await axios.post('https://team-b-see-event.herokuapp.com/api/v1/sign/login', data)
+    .then(res=> {console.log(res.data.result.token)
+    localStorage.setItem('token', res.data.result.token)})
+    .catch(err=> console.log(err))
+
+    // setTimeout(() => {
       formik.setSubmitting(false)
-      formik.resetForm()
-    }, 2000);
+    //   formik.resetForm()
+    // }, 2000);
   }
 
   const formik = useFormik({
@@ -33,7 +49,7 @@ export default function SignIn() {
     //handle submission
     onSubmit: doLogin
   });
-  console.log(formik);
+  // console.log(formik);
   const isError = { 
     email: formik.touched.email && formik.errors.email, 
     password: formik.touched.password && formik.errors.password
