@@ -3,59 +3,34 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./Pages/Home/Home";
-import Navbar from "./Components/NavBar/Header/Navbar";
 import SignUp from "./Pages/SignUp/SingUp";
 import SignIn from "./Pages/SignIn/SignIn";
-import Comment from "./Pages/Event/Comment";
 import SearchPage from "./Pages/Search/SearchPage";
-import SearchBar from "./Components/ShareComponent/SearchBar";
-import DesignEvent from "./Pages/Home/DesignEvent";
-import AttendEvent from "./Pages/Home/AttendEvent";
-import EventCategory from "./Pages/Home/EventCategory";
-import ErrorPage from "./Pages/Error/Error";
-import Search from "./Components/ShareComponent/Search";
-import Footer from "./Components/NavBar/Footer/Footer";
 import EventDetail from "./Pages/Event/EventDetail";
 import CreateEvent from "./Pages/Event/CreateEvent";
 // import Search from './Components/Search';
 // import ButtonSearch from './Components/ButtonSearch';
 // import { PrivateRoute } from './Components/Route/PrivateRoute';
 // import { useSelector } from 'react-redux';
+import Profile from "./Pages/ProfilePage/Profile";
+import Error from "./Pages/Error/Error";
 
 function App() {
 //    const userLogin = useSelector(state => state.userLogin);
 //   const { userInfo } = userLogin;
   return (
-    <div>
-      <Router>
-        <Navbar />
-        {/* <SearchBar/> */}
-        <SearchPage />
-        <Routes>
-        {/* <Route
-            path='/'
-            element={
-              <PrivateRoute auth={{ isAuthenticated: userInfo ? true : false }}>
-                <Home />
-              </PrivateRoute>
-            }
-          /> */}
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/signIn" element={<SignIn />} />
-            <Route path="/" element={<Home />} />
-         </Routes>
-        <Comment/>
-        <CreateEvent />
-        <DesignEvent />
-        <EventCategory />
-        <AttendEvent />
-        <EventDetail />
-        <ErrorPage />
-        <Search/>
-
-        <Footer />
-      </Router>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/event" element={<EventDetail />} />
+        <Route path="/createEvent" element={<CreateEvent />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </>
   );
 }
 export default App;

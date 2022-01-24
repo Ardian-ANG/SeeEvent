@@ -1,6 +1,8 @@
 .main_container {
-  width: 100vw;
+  width: auto;
   height: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 .wrapper_container {
   width: 40%;
