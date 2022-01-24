@@ -19,8 +19,12 @@ import EventDetail from "./Pages/Event/EventDetail";
 import CreateEvent from "./Pages/Event/CreateEvent";
 // import Search from './Components/Search';
 // import ButtonSearch from './Components/ButtonSearch';
+// import { PrivateRoute } from './Components/Route/PrivateRoute';
+// import { useSelector } from 'react-redux';
 
 function App() {
+//    const userLogin = useSelector(state => state.userLogin);
+//   const { userInfo } = userLogin;
   return (
     <div>
       <Router>
@@ -28,6 +32,14 @@ function App() {
         {/* <SearchBar/> */}
         <SearchPage />
         <Routes>
+        {/* <Route
+            path='/'
+            element={
+              <PrivateRoute auth={{ isAuthenticated: userInfo ? true : false }}>
+                <Home />
+              </PrivateRoute>
+            }
+          /> */}
             <Route path="/signUp" element={<SignUp />} />
             <Route path="/signIn" element={<SignIn />} />
             <Route path="/" element={<Home />} />
