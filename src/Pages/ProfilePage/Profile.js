@@ -3,8 +3,15 @@ import photo from "./../../Assets/img/photo.jpg";
 import style from "./../../Styling/Profile.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+const navigate = useNavigate()
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    navigate("/");
+  };
   return (
     <>
       <Navbar />
@@ -19,7 +26,7 @@ const Profile = () => {
         <div className={style.signOutBtn}>
           <button type="button" className={`${style.btnSignOut} btn`}>
             <img className={style.btnIcon} src={logOut} alt="" />
-            <span className={style.signOut}>Sign Out</span>
+            <span className={style.signOut} onClick={handleLogOut}>Sign Out</span>
           </button>
         </div>
       </div>
