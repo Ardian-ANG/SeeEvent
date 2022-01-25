@@ -31,12 +31,10 @@
   display: flex;
   align-items: flex-start;
   color: #373737;
-  width: 281px;
   font-family: Noto Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  line-height: 44px;
 }
 .more_event {
   align-items: flex-end;

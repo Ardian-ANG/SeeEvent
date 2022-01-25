@@ -4,7 +4,18 @@ import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+
 const SearchPage = () => {
+  const { category } = useSelector((state) => state.getEventsReducer);
+
+  //BAGIAN HAMDANI
+  //JANGAN SENTUH TEDDY
+  useEffect(() => {
+    console.log(category);
+  }, []);
+
   return (
     <>
       <Navbar />
