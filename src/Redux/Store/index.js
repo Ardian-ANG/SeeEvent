@@ -1,31 +1,20 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 import { userLoginReducer, UserState } from "../Reducer/userReducer";
 import { getEventsReducer } from "../Reducer/eventsReducer";
 import { getEventDetailReducer } from "../Reducer/eventDetailReducer";
 import { getCommentReducer } from "../Reducer/commentReducer";
+import userReducer from "../Reducer";
 
 const reducers = combineReducers({
-  userLogin: userLoginReducer,
+  userReducer,
   getEventsReducer,
   getEventDetailReducer,
   getCommentReducer,
 });
 
-const userInfoFromStorage = localStorage.getItem("userInfo")
-  ? JSON.parse(localStorage.getItem("userInfo"))
-  : undefined;
-const initialState = {
-  userLogin: { userInfo: userInfoFromStorage },
-};
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const middleware = [thunk];
-
-const store = createStore(
-  reducers,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 export default store;
