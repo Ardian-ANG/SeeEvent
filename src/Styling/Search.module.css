@@ -1,8 +1,8 @@
-
-.search{
-   width:50%;
-   height:56px;
-   border-radius:99px;
+.search {
+  width: 50%;
+  height: 56px;
+  border-radius: 99px;
+  margin-right: 108px;
 }
 .searchIcon{
    width:28px;
@@ -38,9 +38,9 @@
    font-weight:700;
    color:white;
 }
-.btn:focus{
-   outline: none;
-   box-shadow: none;
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 @media (max-width:768px) {
    .search{

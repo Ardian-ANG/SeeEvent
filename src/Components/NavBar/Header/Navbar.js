@@ -1,37 +1,39 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logoNav from "./../../../Assets/logos/LogoSencondary.png";
 import styles from "./../../../Styling/Navbar.module.css";
-// import avatar from "./Assets/icons/avatar.png";
+import NavIsLogin from "./NavIsLogin";
+
 
 export default function Navbar() {
+  const [scroll, setScroll] = useState(true);
   const location = useLocation();
+
+  const changeColorScroll = () => {
+    if (window.scrollY >= 80) {
+      setScroll(false);
+    } else {
+      setScroll(true);
+    }
+  };
+  window.addEventListener("scroll", changeColorScroll);
+
   return (
     <>
       <nav
         className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`}
         style={{
-          backgroundColor:
-            location.pathname === "/" ? "transparent" : "#214457",
+          background: location.pathname === "/" && scroll ? "transparent" : "#214457",
         }}
       >
-        <div className="container">
+        <div className="container" style={{ maxWidth: "100%" }}>
           <Link className="navbar-brand" to="/">
-            <img alt="logo SeeEvent" src={logoNav} width="auto" height="auto" />
+            <img alt="logo SeeEvent" src={logoNav} width="auto" height="auto" style={{ paddingLeft: "112px" }} />
           </Link>
 
           <div className="collapse navbar-collapse">
-            <div className="navbar-nav ms-auto" style={{ gap: "1.5rem" }}>
-              <Link to="/signUp" className="nav-link text-white">
-                Sign Up
-              </Link>
-
-              <Link to="/signIn" className="nav-link text-white">
-                Sign In
-              </Link>
-              {/* sudah login */}
-              {/* <a className="navbar-brand" href="/">
-                <img alt="logo SeeEvent" src={avatar} width="auto" height="auto" />
-              </a> */}
+            <div className="navbar-nav ms-auto" style={{ gap: "2rem", paddingRight: "108px" }}>
+              <NavIsLogin />
             </div>
           </div>
         </div>

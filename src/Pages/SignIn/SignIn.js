@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import { useState } from "react";
 import * as Yup from "yup";
@@ -6,15 +7,45 @@ import hiden from "../../Assets/icons/eye-off.png";
 import styles from "./../../Styling/SignIn.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken, setUser } from "../../Redux/Action/actionUser";
 
 export default function SignIn() {
   const [hide, setHide] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const doLogin = (values) => {
-    console.log("form values", values);
-    setTimeout(() => {
-      formik.setSubmitting(false);
-      formik.resetForm();
-    }, 2000);
+    // console.log("form values", values);
+    const data = {
+      email: values.email,
+      password: values.password,
+    };
+
+    axios
+      .post("https://team-b-see-event.herokuapp.com/api/v1/sign/login", data)
+      .then((res) => {
+        console.log(res);
+        dispatch(setToken(res.data.result.token));
+        navigate("/");
+        // axios({
+        //   method: "GET",
+        //   url: "https://team-b-see-event.herokuapp.com/api/v1/account/",
+        //   headers: {
+        //     Authorization: `Bearer ${res.data.result.token}`,
+        //   },
+        // }).then((response) => {
+        //   console.log(response.data.result);
+        //   dispatch(setUser(response.data.result));
+        // });
+      })
+      .catch((err) => console.log(err));
+
+    // setTimeout(() => {
+    formik.setSubmitting(false);
+    //   formik.resetForm()
+    // }, 2000);
   };
 
   const formik = useFormik({
@@ -31,7 +62,10 @@ export default function SignIn() {
     //handle submission
     onSubmit: doLogin,
   });
-  console.log(formik);
+  const isError = {
+    email: formik.touched.email && formik.errors.email,
+    password: formik.touched.password && formik.errors.password,
+  };
   return (
     <>
       <Navbar />
@@ -43,68 +77,28 @@ export default function SignIn() {
 
           <form onSubmit={formik.handleSubmit}>
             <div className="mb-3">
-              <input
-                type="text"
-                name="email"
-                {...formik.getFieldProps("email")}
-                className="form-control"
-                placeholder="Email"
-              />
-              {formik.touched.email && formik.errors.email && (
-                <div className={styles.error}>{formik.errors.email}</div>
-              )}
+              <input type="text" name="email" {...formik.getFieldProps("email")} className={`${isError.email && "border-danger"} form-control`} placeholder="Email" />
+              {isError.email && <div className={styles.error}>{formik.errors.email}</div>}
             </div>
             <div className=" mb-3">
-              <div
-                className="password d-flex border"
-                style={{ borderRadius: "5px" }}
-              >
-                <input
-                  type={hide ? "text" : "password"}
-                  name="password"
-                  {...formik.getFieldProps("password")}
-                  className="form-control"
-                  placeholder="Password"
-                  style={{ border: "none" }}
-                />
+              <div className={`password d-flex border ${isError.password && "border border-danger"}`} style={{ borderRadius: "5px" }}>
+                <input type={hide ? "text" : "password"} name="password" {...formik.getFieldProps("password")} className="form-control" placeholder="Password" style={{ border: "none" }} />
                 <button
+                  className={styles.btn_eye}
                   onClick={(e) => {
                     e.preventDefault();
                     setHide(!hide);
                   }}
-                  style={{ border: "none", background: "none" }}
                 >
-                  <img
-                    src={hide ? hiden : show}
-                    style={{
-                      width: "auto",
-                      height: "25px",
-                      marginRight: "5px",
-                    }}
-                  />
+                  <img className={styles.icon_eye} src={hide ? hiden : show} />
                 </button>
               </div>
-              {formik.touched.password && formik.errors.password && (
-                <div className={styles.error}>{formik.errors.password}</div>
-              )}
+              {isError.password && <div className={styles.error}>{formik.errors.password}</div>}
             </div>
-            <button
-              type="submit"
-              className={styles.btn_submit}
-              disabled={formik.isSubmitting}
-            >
+            <button type="submit" className={styles.btn_submit} disabled={formik.isSubmitting}>
               Sign In
             </button>
-            <a
-              className="nav-link text-center"
-              href="#"
-              style={{
-                fontWeight: "bold",
-                fontSize: "16px",
-                lineHeight: "25px",
-                color: "#3E89AE",
-              }}
-            >
+            <a className="nav-link text-center" href="#" style={{ fontWeight: "bold", fontSize: "16px", lineHeight: "25px", color: "#3E89AE" }}>
               Forgot Password?
             </a>
           </form>
