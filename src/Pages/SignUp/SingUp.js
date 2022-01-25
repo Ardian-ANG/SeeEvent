@@ -8,11 +8,15 @@ import styles from "./../../Styling/SignUp.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../Redux/Action/actionUser";
+
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
-  const [hideCom, setHideCom] = useState(false);
+  const [hideComfirm, setHideComfirm] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const doRegister = (values) => {
     console.log("form values", values);
@@ -21,18 +25,19 @@ export default function SignUp() {
       last_name: values.lastName,
       email: values.email,
       password: values.password,
-      // password_confirmation: 'values.confirmPassword',
+     
     };
     axios.post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data).then((res) => {
+      console.log(res.data.result.token);
+      dispatch(setToken(res.data.result.token))
       navigate("/signIn")  
     })
     .catch((err) => {
       if(err.response)console.log(err.response.data.message);
     
     });
-    formik.setSubmitting(false)
     // setTimeout(() => {
-    //   formik.setSubmitting(false)
+      formik.setSubmitting(false)
     //   formik.resetForm()
     // }, 2000);
   };
@@ -112,15 +117,15 @@ export default function SignUp() {
           </div>
           <div className="mb-3">
             <div className={`password d-flex border ${isError.confirmPassword && "border border-danger"}`} style={{ borderRadius: "5px" }}>
-              <input type={hideCom ? "text" : "password"} name="confirmPassword" {...formik.getFieldProps("confirmPassword")} className="form-control" placeholder="Confirm Password" style={{ border: "none" }} />
+              <input type={hideComfirm ? "text" : "password"} name="confirmPassword" {...formik.getFieldProps("confirmPassword")} className="form-control" placeholder="Confirm Password" style={{ border: "none" }} />
               <button
                 className={styles.btn_eye}
                 onClick={(e) => {
                   e.preventDefault();
-                  setHideCom(!hideCom);
+                  setHideComfirm(!hideComfirm);
                 }}
               >
-                <img className={styles.icon_eye} src={hideCom ? hiden : show} />
+                <img className={styles.icon_eye} src={hideComfirm ? hiden : show} />
               </button>
             </div>
             {isError.confirmPassword && <div className={styles.error}>{formik.errors.confirmPassword}</div>}

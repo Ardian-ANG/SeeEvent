@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logoNav from "./../../../Assets/logos/LogoSencondary.png";
 import styles from "./../../../Styling/Navbar.module.css";
-import IsLogin from "./IsLogin";
-// import avatar from "./Assets/icons/avatar.png";
+import NavIsLogin from "./NavIsLogin";
+
 
 export default function Navbar() {
   const [scroll, setScroll] = useState(true);
@@ -33,7 +33,7 @@ export default function Navbar() {
 
           <div className="collapse navbar-collapse">
             <div className="navbar-nav ms-auto" style={{ gap: "2rem", paddingRight: "108px" }}>
-              <IsLogin />
+              <NavIsLogin />
             </div>
           </div>
         </div>

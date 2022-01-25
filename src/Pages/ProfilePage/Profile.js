@@ -4,12 +4,19 @@ import style from "./../../Styling/Profile.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogOut } from "../../Redux/Action/actionUser";
 
 const Profile = () => {
-const navigate = useNavigate()
+  const { user, token } = useSelector((state) => state);
+console.log(token);
+console.log(user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleLogOut = (e) => {
     e.preventDefault();
-    localStorage.removeItem("token");
+    dispatch(userLogOut());
     navigate("/");
   };
   return (
@@ -20,13 +27,15 @@ const navigate = useNavigate()
           <img className={style.imgProfile} src={photo} alt="..." />
         </div>
         <div className="profileInfo">
-          <h3 className={style.profileName}>Pratur Anahata Pratama</h3>
+          <h3 className={style.profileName}>ddfd{user} {user.last_name}</h3>
           <p className={style.profileEmail}>praturanhata45@gmail.com</p>
         </div>
         <div className={style.signOutBtn}>
           <button type="button" className={`${style.btnSignOut} btn`}>
             <img className={style.btnIcon} src={logOut} alt="" />
-            <span className={style.signOut} onClick={handleLogOut}>Sign Out</span>
+            <span className={style.signOut} onClick={handleLogOut}>
+              Sign Out
+            </span>
           </button>
         </div>
       </div>

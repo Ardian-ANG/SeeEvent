@@ -8,26 +8,37 @@ import styles from "./../../Styling/SignIn.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken, setUser } from "../../Redux/Action/actionUser";
 
 export default function SignIn() {
   const [hide, setHide] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const doLogin = (values) => {
-    console.log("form values", values);
+    // console.log("form values", values);
     const data = {
       email: values.email,
       password: values.password,
     };
 
-    localStorage.setItem("data", JSON.stringify(data));
-
     axios
       .post("https://team-b-see-event.herokuapp.com/api/v1/sign/login", data)
       .then((res) => {
-        console.log(res.data.result.token);
-        localStorage.setItem("token", res.data.result.token);
+        console.log(res);
+        dispatch(setToken(res.data.result.token));
         navigate("/");
+        // axios({
+        //   method: "GET",
+        //   url: "https://team-b-see-event.herokuapp.com/api/v1/account/",
+        //   headers: {
+        //     Authorization: `Bearer ${res.data.result.token}`,
+        //   },
+        // }).then((response) => {
+        //   console.log(response.data.result);
+        //   dispatch(setUser(response.data.result));
+        // });
       })
       .catch((err) => console.log(err));
 
