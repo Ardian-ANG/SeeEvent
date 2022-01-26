@@ -6,11 +6,13 @@ import {
   GET_ATTEND_EVENT_SUCCES,
   GET_ATTEND_EVENT_FAILED,
   SEARCH_EVENT_CATEGORY,
+  SEARCH_EVENTS,
 } from "../Store/constant";
 
 const initialState = {
   events: [],
   attendEvents: [],
+  searchEvents: [],
   category: "",
   loading: true,
   error: "",
@@ -39,6 +41,13 @@ export const getEventsReducer = (state = initialState, action) => {
       return {
         ...state,
         category: action.payload,
+      };
+   case SEARCH_EVENTS:
+      console.log(state)
+      console.log(action.payload)
+      return {
+         ...state,
+         searchEvents: action.payload,
       };
     case GET_ATTEND_EVENT_REQUEST:
       return {
