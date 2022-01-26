@@ -8,7 +8,11 @@ import styles from "./../../Styling/SignUp.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import { useDispatch } from "react-redux";
+=======
+
+>>>>>>> 352a507178799921aa4fdf9c09357b36dba542e6
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
@@ -23,6 +27,7 @@ export default function SignUp() {
       email: values.email,
       password: values.password,
     };
+<<<<<<< HEAD
     axios
       .post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data)
       .then((res) => {
@@ -33,6 +38,20 @@ export default function SignUp() {
         if (err.response) alert(err.response.data.message);
       });
     formik.setSubmitting(false);
+=======
+    axios.post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data).then((res) => {
+      alert(res.data.message)
+      navigate("/signIn")  
+    })
+    .catch((err) => {
+      if(err.response)alert(err.response.data.message);
+    
+    });
+    // setTimeout(() => {
+      formik.setSubmitting(false)
+    //   formik.resetForm()
+    // }, 2000);
+>>>>>>> 352a507178799921aa4fdf9c09357b36dba542e6
   };
 
   const formik = useFormik({
@@ -145,7 +164,7 @@ export default function SignUp() {
                     setHide(!hide);
                   }}
                 >
-                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                  <img className={styles.icon_eye} src={hide ? hiden : show}  alt="icon eye" />
                 </button>
               </div>
               {isError.password && (
@@ -177,6 +196,7 @@ export default function SignUp() {
                   <img
                     className={styles.icon_eye}
                     src={hideComfirm ? hiden : show}
+                    alt="icon eye confim"
                   />
                 </button>
               </div>

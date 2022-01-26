@@ -60,7 +60,7 @@ export default function SignIn() {
     <>
       <Navbar />
       <div className={`${styles.cotainer}container-fluid row mx-auto`}>
-        <div className="col-sm-4 mx-auto" style={{ margin: "100px 0px" }}>
+        <div className="col-sm-4 mx-auto" style={{ margin: "130px 0px" }}>
           <div className="text-center" style={{ marginBottom: "56px" }}>
             <h3 className={styles.title}>Welcome back!</h3>
           </div>
