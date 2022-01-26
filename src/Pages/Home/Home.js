@@ -8,6 +8,7 @@ import Footer from "../../Components/NavBar/Footer/Footer";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 
 export default function Home() {
+  
   return (
     <>
       <Navbar />

@@ -1,27 +1,29 @@
-import {
-  USER_LOGIN_SUCCESS,
-  USER_LOGIN_REQUEST,
-  USER_LOGIN_FAIL,
-  USER_LOGOUT,
-} from "../Store/constant";
+const initialState = {
+  user: localStorage.getItem('user') ? localStorage.getItem('user') : false,
+  token: localStorage.getItem('token') ? localStorage.getItem('token') : false,
+};
 
-export const userLoginReducer = (state = { userInfo: {} }, action) => {
+export default function userReducer(state = initialState, action) {
   switch (action.type) {
-    case USER_LOGIN_REQUEST:
-      return { loading: true };
-    case USER_LOGIN_SUCCESS:
-      return { loading: false, userInfo: action.payload };
-    case USER_LOGIN_FAIL:
-      return { loading: false, error: action.payload };
-    case USER_LOGOUT:
+    case "TOKEN":
       return {
-        userInfo: {
-          username: "",
-          email: "",
-          token: "",
-        },
+        ...state,
+        token: action.payload,
+      };
+    case "USER_LOGOUT":
+      return {
+        ...state,
+        user: "",
+        token: "",
+      };
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload,
+      
       };
     default:
       return state;
   }
-};
+}
