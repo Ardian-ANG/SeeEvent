@@ -17,8 +17,8 @@ export const getComment = (id) => {
           payload: response.data.result,
         });
       })
-      .catch((error) => {
-        dispatch({ type: GET_COMMENT_FAILED, payload: error });
+      .catch((response) => {
+        dispatch({ type: GET_COMMENT_FAILED, payload: response.data.massage });
       });
   };
 };

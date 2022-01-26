@@ -23,15 +23,15 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <div className="d-flex flex-column p-2 bd-highlight">
+      <div className="d-flex flex-column justify-content-center mx-auto p-2 w-75 bd-highlight">
         <div className="text-center">
           <img className={style.imgProfile} src={profil.image} alt="..." />
         </div>
-        <div className="profileInfo">
+        <div className="profileInfo text-center">
           <h3 className={style.profileName}>{profil.first_name} {profil.last_name}</h3>
           <p className={style.profileEmail}>{profil.email}</p>
         </div>
-        <div className={style.signOutBtn}>
+        <div className={`${style.signOutBtn} text-center`}>
           <button type="button" className={`${style.btnSignOut} btn`}>
             <img className={style.btnIcon} src={logOut} alt="" />
             <span className={style.signOut} onClick={handleLogOut}>

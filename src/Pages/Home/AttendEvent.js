@@ -25,7 +25,7 @@ const AttendEvent = () => {
           <h3 className={styles.design_header}>
             Attend Event that Starting Soon
           </h3>
-          <a className={styles.more_event} href="" target={"/search"}>
+          <a className={styles.more_event} href={"/search"} target={""}>
             More Events
           </a>
         </div>
@@ -37,11 +37,13 @@ const AttendEvent = () => {
               key={event.id}
               to={`/event/${event.id}`}
             >
-              <img
-                className={styles.event_image}
-                src={event.image}
-                alt="Momo"
-              />
+              <div className={styles.image_container}>
+                <img
+                  className={styles.event_image}
+                  src={event.image}
+                  alt="Momo"
+                />
+              </div>
               <div className={styles.event_container}>
                 <div className={styles.event_top}>
                   <div className={styles.category_container}>

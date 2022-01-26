@@ -5,6 +5,7 @@ import {
   GET_ATTEND_EVENT_REQUEST,
   GET_ATTEND_EVENT_SUCCES,
   GET_ATTEND_EVENT_FAILED,
+  SEARCH_EVENTS,
   SEARCH_EVENT_CATEGORY,
 } from "../Store/constant";
 import axios from "axios";
@@ -22,6 +23,12 @@ export const getEvents = () => {
       .catch((error) => {
         dispatch({ type: GET_EVENTS_FAILED, payload: error });
       });
+  };
+};
+
+export const changeCategory = (category) => {
+  return (dispatch) => {
+    dispatch({ type: "CHANGE_CATEGORY", payload: category });
   };
 };
 
@@ -58,3 +65,34 @@ export const getAttendEvent = () => {
       });
   };
 };
+
+export const searchEvents = (keyword) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios(
+        `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
+      );
+      const event = response.data.result;
+      dispatch({
+        type: SEARCH_EVENTS,
+        payload: event,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// return (dispatch) => {
+//    dispatch({type: SEARCH_EVENTS});
+
+//    axios
+//    .get(
+//       `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
+//    )
+//    .then((response) => {
+//       console.log(response.data.result)
+//       // const events = response.data.result;
+//       dispatch({ type: SEARCH_EVENTS, payload: response.data.result });
+//    })
+// }
