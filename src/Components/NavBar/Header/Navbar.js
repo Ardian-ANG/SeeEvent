@@ -9,15 +9,8 @@ import { useSelector } from "react-redux";
 export default function Navbar() {
   const [scroll, setScroll] = useState(false);
   const location = useLocation();
-<<<<<<< HEAD
   const { userReducer } = useSelector((state) => state);
   const { token } = userReducer;
-=======
-  const { userReducer}  = useSelector((state) => state);
-  const {token} = userReducer
-
-  
->>>>>>> 352a507178799921aa4fdf9c09357b36dba542e6
 
   const changeColorScroll = () => {
     if (window.scrollY >= 80) {
@@ -33,13 +26,8 @@ export default function Navbar() {
       <nav
         className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`}
         style={{
-<<<<<<< HEAD
           background:
             location.pathname === "/" && !scroll ? "transparent" : "#214457",
-=======
-          background: location.pathname === "/" && !scroll? "transparent" : "#214457",
-    
->>>>>>> 352a507178799921aa4fdf9c09357b36dba542e6
         }}
       >
         <div className="container" style={{ maxWidth: "100%" }}>

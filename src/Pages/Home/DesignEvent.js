@@ -14,7 +14,7 @@ const DesignEvent = () => {
 
   useEffect(() => {
     dispatch(getEvents());
-  }, [""]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={styles.main_container}>
