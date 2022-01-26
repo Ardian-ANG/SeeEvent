@@ -85,7 +85,7 @@ export default function SignIn() {
                     setHide(!hide);
                   }}
                 >
-                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                  <img className={styles.icon_eye} alt="hideIcon" src={hide ? hiden : show} />
                 </button>
               </div>
               {isError.password && <div className={styles.error}>{formik.errors.password}</div>}

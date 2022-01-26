@@ -1,5 +1,4 @@
 import logOut from "./../../Assets/icons/logOut.png";
-// import photo from "./../../Assets/img/photo.jpg";
 import style from "./../../Styling/Profile.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";

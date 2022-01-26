@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import { useDispatch } from "react-redux";
 // import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import {searchEvents} from './../../Redux/Action/eventsAction';
+import {searchEvent} from './../../Redux/Action/eventsAction';
 
 
 const Search = () => {
@@ -26,7 +26,7 @@ const Search = () => {
    // }
    const handleClick = (e, keyword) => {
       e.preventDefault();
-      dispatch(searchEvents(keyword));
+      dispatch(searchEvent(keyword));
       navigate("/search");
     };
 
