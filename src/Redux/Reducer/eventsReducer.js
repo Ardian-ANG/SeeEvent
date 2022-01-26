@@ -13,6 +13,7 @@ const initialState = {
   events: [],
   attendEvents: [],
   searchEvents: [],
+  categoryEvents: [],
   category: "",
   loading: true,
   error: "",
@@ -37,17 +38,20 @@ export const getEventsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
-    case SEARCH_EVENT_CATEGORY:
+    case "CHANGE_CATEGORY":
       return {
         ...state,
         category: action.payload,
       };
-   case SEARCH_EVENTS:
-      console.log(state)
-      console.log(action.payload)
+    case SEARCH_EVENT_CATEGORY:
       return {
-         ...state,
-         searchEvents: action.payload,
+        ...state,
+        categoryEvents: action.payload,
+      };
+    case SEARCH_EVENTS:
+      return {
+        ...state,
+        searchEvents: action.payload,
       };
     case GET_ATTEND_EVENT_REQUEST:
       return {

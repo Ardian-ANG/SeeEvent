@@ -1,4 +1,4 @@
-import { searchCategory } from "../../Redux/Action/eventsAction";
+import { changeCategory } from "../../Redux/Action/eventsAction";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const EventCategory = () => {
 
   const handleClick = (e, category) => {
     e.preventDefault();
-    dispatch(searchCategory(category));
+    dispatch(changeCategory(category));
     navigate("/search");
   };
   return (
