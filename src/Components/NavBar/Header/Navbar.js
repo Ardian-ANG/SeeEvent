@@ -27,17 +27,17 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`}
+        className={`${styles.navbar} navbar sticky-top navbar-expand-lg navbar-expand-md navbar-expand-sm mx-auto`}
         style={{
           background: location.pathname === "/" && !scroll? "transparent" : "#214457",
     
         }}
       >
-        <div className="container" style={{ maxWidth: "100%" }}>
+        <div className={`${styles.container} container`} style={{ maxWidth: "100%" }}>
           <Link className="navbar-brand" to="/">
             <img alt="logo SeeEvent" src={logoNav} width="auto" height="auto" style={{ paddingLeft: "112px" }} />
           </Link>
-          {location.pathname !== "/" && token?<SearchBar/>: null}
+          {location.pathname !== "/" && token ?<SearchBar/>: null}
           
 
           <div className="collapse navbar-collapse">
