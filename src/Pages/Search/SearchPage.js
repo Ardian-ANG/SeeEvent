@@ -3,24 +3,36 @@ import Pagination from "./Pagination";
 import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
-
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { searchCategory } from "../../Redux/Action/eventsAction";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import {
+  searchCategory,
+  getEvents,
+  searchEvents,
+} from "../../Redux/Action/eventsAction";
 
 const SearchPage = () => {
-  const { category } = useSelector((state) => state.getEventsReducer);
   const dispatch = useDispatch();
+  const { events, search, category, searchEvents, categoryEvents } =
+    useSelector((data) => data.getEventsReducer);
+  const [select, setSelect] = useState("AllCategories");
 
-  //BAGIAN HAMDANI
-  //JANGAN SENTUH TEDDY
-  useEffect(() => {
-    dispatch(searchCategory(category));
-  }, []);
-  console.log(category);
+  //
   // console.log(dispatch(searchCategory(category)));
+  useEffect(() => {
+    dispatch(getEvents(events));
+    console.log(category);
+    if (category) {
+      setSelect(category);
+      dispatch(searchCategory(category));
+    } else if (search) {
+      dispatch(searchEvents(search));
+    }
+  }, []);
 
+  useEffect(() => {
+    console.log(categoryEvents);
+  }, [categoryEvents]);
   return (
     <>
       <Navbar />
@@ -34,8 +46,8 @@ const SearchPage = () => {
                 id="floatingSelect"
                 aria-label="Floating label select example"
               >
-                <option selected>Open this select menu</option>
-                <option value="1">All Time</option>
+                {/* <option selected>Open this select menu</option> */}
+                <option defaultValue="1">All Time</option>
                 <option value="2">Today</option>
                 <option value="3">Tomorrow</option>
                 <option value="3">This Week</option>
@@ -49,16 +61,18 @@ const SearchPage = () => {
                 className="form-select"
                 id="floatingSelect"
                 aria-label="Floating label select example"
+                value={select}
+                onChange={(e) => setSelect(e.target.value)}
               >
-                <option selected>Open this select menu</option>
-                <option value="1">All Categories</option>
-                <option value="2">Photography</option>
-                <option value="3">Desain</option>
-                <option value="3">Development</option>
-                <option value="3">Marketing</option>
-                <option value="3">Bussiness</option>
-                <option value="3">Lifestyle</option>
-                <option value="3">Music</option>
+                {/* <option selected>Open this select menu</option> */}
+                <option value="AllCategories">All Categories</option>
+                <option value="Photography">Photography</option>
+                <option value="Desain">Desain</option>
+                <option value="Development">Development</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Business">Business</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Music">Music</option>
               </select>
               <label for="floatingSelect">Filter By Category</label>
             </div>
@@ -68,14 +82,29 @@ const SearchPage = () => {
                 id="floatingSelect"
                 aria-label="Floating label select example"
               >
-                <option selected>Open this select menu</option>
-                <option value="1">Date</option>
+                {/* <option selected>Open this select menu</option> */}
+                <option defaultValue="1">Date</option>
                 <option value="2">Name</option>
               </select>
               <label for="floatingSelect">Sorting By</label>
             </div>
           </div>
-          <Pagination />
+          <div
+            className={`${style.result_filter} d-flex justify-content-between gap-4 mt-4`}
+          >
+            {events.map((event) => {
+              return (
+                <Pagination
+                  id={event.id}
+                  image={event.image}
+                  category={event.category?.name}
+                  date={event.datetime}
+                  title={event.title}
+                  createdBy={event.createdBy?.first_name}
+                />
+              );
+            })}
+          </div>
           <NotFind />
         </div>
       </div>
