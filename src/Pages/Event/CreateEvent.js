@@ -1,7 +1,6 @@
 import styles from "./../../Styling/CreateEvent.module.css";
 import Default from "./../../Assets/img/create event default.png";
 import Upload from "./../../Assets/icons/upload.png";
-import BottomArrow from "./../../Assets/icons/bottom arrow.png";
 import Calender from "./../../Assets/icons/calendar.png";
 import NavBar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
@@ -23,7 +22,7 @@ const CreateEvent = () => {
               <img
                 src={Upload}
                 className={styles.upload_icon}
-                alt="Upload Button Picture"
+                alt="Upload Button"
               />
               <span className={styles.upload_text}>Upload Image</span>
             </button>
@@ -48,7 +47,12 @@ const CreateEvent = () => {
             </div>
 
             <div className={styles.category_container}>
-              <select id="dropdown" name="role" class="form-control" required>
+              <select
+                class="form-control"
+                id="floatingSelect"
+                aria-label="Floating label select example"
+                required
+              >
                 <option disabled selected value>
                   Select Category
                 </option>
@@ -61,29 +65,15 @@ const CreateEvent = () => {
                 <option value="Photography">Photography</option>
               </select>
             </div>
-            <div className={styles.category_container}>
-              <input
-                className={styles.category_input}
-                required
-                placeholder="Select Category"
-              ></input>
-              <img
-                className={styles.category_icon}
-                src={BottomArrow}
-                alt="Category Arrow"
-              />
-            </div>
-            <input
-              className={styles.detail_input}
-              required
-              placeholder="Event Details"
-            />
+            <input className={styles.detail_input} required />
           </div>
           <div className={styles.bottom_container}>
             <button className={styles.create_button} type="submit">
               Create
             </button>
-            <a className={styles.help_link} href="" target="#blank">
+          </div>
+          <div className={styles.link_container}>
+            <a className={styles.help_link} href={"/"} target="#blank">
               Having an Issue When Creatin New Event?
             </a>
           </div>

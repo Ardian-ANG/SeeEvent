@@ -8,16 +8,10 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SearchPage from "./Pages/Search/SearchPage";
 import EventDetail from "./Pages/Event/EventDetail";
 import CreateEvent from "./Pages/Event/CreateEvent";
-// import Search from './Components/Search';
-// import ButtonSearch from './Components/ButtonSearch';
-// import { PrivateRoute } from './Components/Route/PrivateRoute';
-// import { useSelector } from 'react-redux';
 import Profile from "./Pages/ProfilePage/Profile";
 import Error from "./Pages/Error/Error";
 
 function App() {
-//    const userLogin = useSelector(state => state.userLogin);
-//   const { userInfo } = userLogin;
   return (
     <>
       <Routes>

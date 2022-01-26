@@ -9,14 +9,13 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 const AttendEvent = () => {
-  const { attendEvents, loading, error } = useSelector(
-    (state) => state.getEventsReducer
-  );
+  const { attendEvents } = useSelector((state) => state.getEventsReducer);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAttendEvent());
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={styles.main_container}>

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogOut } from "../../Redux/Action/userAction";
 
-  const Profile = () => {
+const Profile = () => {
   const { userReducer } = useSelector((state) => state);
   const { user } = userReducer;
   const profil = JSON.parse(user);

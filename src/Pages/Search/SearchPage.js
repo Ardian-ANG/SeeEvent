@@ -5,11 +5,7 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import {
-  searchCategory,
-  getEvents,
-  searchEvents,
-} from "../../Redux/Action/eventsAction";
+import { searchCategory, getEvents } from "../../Redux/Action/eventsAction";
 
 const SearchPage = () => {
   const dispatch = useDispatch();
@@ -28,7 +24,7 @@ const SearchPage = () => {
     } else if (search) {
       dispatch(searchEvents(search));
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     console.log(categoryEvents);
