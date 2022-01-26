@@ -18,7 +18,6 @@ export default function SignIn() {
   const dispatch = useDispatch();
 
   const doLogin = (values) => {
-    // console.log("form values", values);
     const data = {
       email: values.email,
       password: values.password,
@@ -85,7 +84,7 @@ export default function SignIn() {
                     setHide(!hide);
                   }}
                 >
-                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                  <img className={styles.icon_eye} src={hide ? hiden : show} alt="eye icon"/>
                 </button>
               </div>
               {isError.password && <div className={styles.error}>{formik.errors.password}</div>}

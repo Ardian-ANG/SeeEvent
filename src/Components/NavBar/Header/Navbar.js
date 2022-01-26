@@ -13,6 +13,7 @@ export default function Navbar() {
   const { userReducer}  = useSelector((state) => state);
   const {token} = userReducer
 
+  
 
   const changeColorScroll = () => {
     if (window.scrollY >= 80) {
@@ -28,7 +29,8 @@ export default function Navbar() {
       <nav
         className={`${styles.navbar} navbar sticky-top navbar-expand-lg mx-auto`}
         style={{
-          background: location.pathname === "/" && !scroll ? "transparent" : "#214457",
+          background: location.pathname === "/" && !scroll? "transparent" : "#214457",
+    
         }}
       >
         <div className="container" style={{ maxWidth: "100%" }}>
