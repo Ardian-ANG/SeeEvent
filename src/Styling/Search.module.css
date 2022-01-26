@@ -46,6 +46,7 @@
    .search{
       width:70%;
       height:40px;
+      margin-left: 6rem;
    }
    .searchIcon{
       width:25px;
@@ -63,6 +64,7 @@
    .search{
       width:95%;
       height:30px;
+      margin-left: 16px;
    }
    .searchIcon{
       width:15px;
