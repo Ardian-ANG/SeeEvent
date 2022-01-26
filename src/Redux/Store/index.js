@@ -1,6 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { userLoginReducer, UserState } from "../Reducer/userReducer";
 import { getEventsReducer } from "../Reducer/eventsReducer";
 import { getEventDetailReducer } from "../Reducer/eventDetailReducer";
 import { getCommentReducer } from "../Reducer/commentReducer";

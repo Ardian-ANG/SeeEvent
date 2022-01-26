@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useResolvedPath } from "react-router-dom";
+import moment from "moment";
 
 import MessageCircle from "./../../Assets/icons/MessageCircle.png";
-import photo from "./../../Assets/img/photo.jpg";
 import style from "./../../Styling/Comment.module.css";
 import { getComment } from "../../Redux/Action/commentAction";
 
@@ -22,6 +22,9 @@ const Comment = () => {
     dispatch(getComment(params.id));
   }, []);
 
+  //setting time for comment with moment.js
+  // const commentTime = moment(event.datetime).startOf("day").fromNow();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewCommentList([...commentList, newComment]);
@@ -36,25 +39,33 @@ const Comment = () => {
         <div className={style.sectionTitle}>
           <span>Comments</span>
         </div>
-        <div className={style.commentWrapper}>
-          <div className="comment-content">
-            <div
-              className="profile-user d-flex flex-row"
-              className={style.commentHeader}
-            >
-              <div className={style.imgWrapper}>
-                <div className={style.imgUser}>
-                  <img src={photo} alt="profil" />
+        {/* MAPPING COMMENTS FROM API */}
+        {commentList.map((comment) => (
+          <div className={style.commentWrapper} key={comment.id}>
+            <div className="comment-content">
+              <div
+                className="profile-user d-flex flex-row"
+                className={style.commentHeader}
+              >
+                <div className={style.imgWrapper}>
+                  <div className={style.imgUser}>
+                    <img src={comment.users?.image} alt="Profil Image" />
+                  </div>
+                </div>
+                <div className={style.profilUserName}>
+                  <div className={style.userName}>
+                    {comment.users?.first_name} {""}
+                    {comment.users?.last_name}
+                  </div>
+                  <div className={style.postDate}>
+                    {moment(comment.createdAt).startOf("day").fromNow()}
+                  </div>
                 </div>
               </div>
-              <div className={style.profilUserName}>
-                <div className={style.userName}>Artieady</div>
-                <div className={style.postDate}>2 hours ago</div>
-              </div>
+              <div className={style.commentCaption}>{comment.description}</div>
             </div>
-            <div className={style.commentCaption}>Pucing pala belbi</div>
           </div>
-        </div>
+        ))}
         <form
           className={`${style.commentArea} d-flex flex-column`}
           onSubmit={handleSubmit}

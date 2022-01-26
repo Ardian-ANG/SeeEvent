@@ -27,7 +27,6 @@ const EventDetail = () => {
 
   //setting time
   const newTime = moment(event.datetime).utc().format("ddd, MMM D @ hh:mm A z");
-  const commentTime = moment(event.datetime).startOf("day").fromNow();
 
   return (
     <>
