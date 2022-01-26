@@ -2,8 +2,10 @@ import avatar from "../../Assets/icons/avatar.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
 export default function NavIsLogin() {
   const { token } = useSelector((state) => state);
+
 
   if (token) {
     return (
@@ -24,4 +26,5 @@ export default function NavIsLogin() {
       </>
     );
   }
+  
 }

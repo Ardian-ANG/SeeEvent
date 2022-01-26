@@ -1,5 +1,4 @@
 const initialState = {
-  // user: localStorage.getItem('user') ? localStorage.getItem('user'): false,/
   user: '',
   token: localStorage.getItem('token') ? localStorage.getItem('token') : false,
 };
@@ -19,9 +18,11 @@ export default function userReducer(state = initialState, action) {
       };
 
     case "SET_USER":
+      console.log(action.payload);
       return {
         ...state,
         user: action.payload,
+      
       };
     default:
       return state;

@@ -9,14 +9,14 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../Redux/Action/actionUser";
+// import { setToken } from "../../Redux/Action/actionUser";
 
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
   const [hideComfirm, setHideComfirm] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const doRegister = (values) => {
     console.log("form values", values);
@@ -28,12 +28,12 @@ export default function SignUp() {
      
     };
     axios.post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data).then((res) => {
-      console.log(res.data.result.token);
-      dispatch(setToken(res.data.result.token))
+      alert(res.data.message)
+      // dispatch(setToken(res.data.result.token))
       navigate("/signIn")  
     })
     .catch((err) => {
-      if(err.response)console.log(err.response.data.message);
+      if(err.response)alert(err.response.data.message);
     
     });
     // setTimeout(() => {

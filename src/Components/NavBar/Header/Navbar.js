@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import SearchBar from "../../ShareComponent/SearchBar";
 import logoNav from "./../../../Assets/logos/LogoSencondary.png";
 import styles from "./../../../Styling/Navbar.module.css";
 import NavIsLogin from "./NavIsLogin";
+import { useSelector } from "react-redux";
 
 
 export default function Navbar() {
   const [scroll, setScroll] = useState(true);
   const location = useLocation();
+  const {token} = useSelector(state=> state)
 
   const changeColorScroll = () => {
     if (window.scrollY >= 80) {
@@ -30,6 +33,8 @@ export default function Navbar() {
           <Link className="navbar-brand" to="/">
             <img alt="logo SeeEvent" src={logoNav} width="auto" height="auto" style={{ paddingLeft: "112px" }} />
           </Link>
+          {location.pathname !== "/" && token?<SearchBar/>: null}
+          
 
           <div className="collapse navbar-collapse">
             <div className="navbar-nav ms-auto" style={{ gap: "2rem", paddingRight: "108px" }}>

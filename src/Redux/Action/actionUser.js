@@ -1,10 +1,8 @@
 
-export const setUser=(data)=>{
-    // JSON.stringify(localStorage.setItem('user', data))
-    // console.log(data, 'data user');
+export const setUser=(user)=>{
     return{
         type: 'SET_USER',
-        payload: data
+        payload: user
     }
 }
 

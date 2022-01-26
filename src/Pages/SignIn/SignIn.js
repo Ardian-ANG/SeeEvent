@@ -26,21 +26,14 @@ export default function SignIn() {
     axios
       .post("https://team-b-see-event.herokuapp.com/api/v1/sign/login", data)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         dispatch(setToken(res.data.result.token));
+        alert(res.data.message)
         navigate("/");
-        // axios({
-        //   method: "GET",
-        //   url: "https://team-b-see-event.herokuapp.com/api/v1/account/",
-        //   headers: {
-        //     Authorization: `Bearer ${res.data.result.token}`,
-        //   },
-        // }).then((response) => {
-        //   console.log(response.data.result);
-        //   dispatch(setUser(response.data.result));
-        // });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response) alert(err.response.data.message);
+      });
 
     // setTimeout(() => {
     formik.setSubmitting(false);
