@@ -1,10 +1,39 @@
 import search from "./../../Assets/icons/search.png";
 import style from "./../../Styling/Search.module.css";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
-const [keyWord, setKeyWord] = useState('');
 
 const Search = () => {
+
+   // const keywordRef = useRef();
+
+   // const submitData = (e)=>{
+   //    e.preventDefault();
+   //    const keyword = keywordRef.current.value;
+   //    console.log(keyword);
+   // }
+   const [keyword, setKeyword] = useState();
+   console.log(keyword)
+
+   // const handleChange=(e, value)=>{
+   //    e.preventDefault();
+   //    setKeyword(e.target.value);
+   // }
+
+   useEffect(()=>{
+         axios
+            .get(
+               `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
+            )
+            .then((res)=>{
+               console.log(res.data.result)
+            })
+   
+   },[keyword])
+
+
    return (
       <div className={`${style.search} d-flex align-items-center p-2 bg-light`}>
          <div className={style.logoWrapper}>
@@ -17,11 +46,13 @@ const Search = () => {
                type="search"
                placeholder="Search events"
                aria-label="Search"
+               value={keyword}
+               onChange={(e)=>setKeyword(e.target.value)}
             />
          </form>
          </div>
          <div className={`${style.buttonWrapper} d-flex justify-content-end`}>
-         <button type="button" className={style.buttonSrc}>
+         <button type="submit" className={style.buttonSrc} >
             <span>Search</span>
          </button>
          </div>
