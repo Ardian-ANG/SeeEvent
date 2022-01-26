@@ -25,14 +25,17 @@ export const getComment = (id) => {
       });
   };
 };
-export const postComment = (data, id) => {
+export const postComment = (data, id, token) => {
   return (dispatch, getState) => {
     dispatch({ type: POST_COMMENT_REQUEST });
     //API Post
     axios
       .post(`https://team-b-see-event.herokuapp.com/api/v1/comment/${id}`, {
         data: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `bearer ${token}`,
+        },
       })
       .then((response) => {
         console.log(response.data);
@@ -42,7 +45,7 @@ export const postComment = (data, id) => {
         console.log(error);
         dispatch({
           type: POST_COMMENT_FAILED,
-          payload: error.data.massage,
+          payload: error.massage,
         });
       });
   };

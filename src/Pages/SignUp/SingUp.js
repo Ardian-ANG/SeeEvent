@@ -9,14 +9,11 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import { setToken } from "../../Redux/Action/userAction";
-
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
   const [hideComfirm, setHideComfirm] = useState(false);
   const navigate = useNavigate();
-  // const dispatch = useDispatch()
 
   const doRegister = (values) => {
     console.log("form values", values);
@@ -25,21 +22,17 @@ export default function SignUp() {
       last_name: values.lastName,
       email: values.email,
       password: values.password,
-     
     };
-    axios.post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data).then((res) => {
-      alert(res.data.message)
-      // dispatch(setToken(res.data.result.token))
-      navigate("/signIn")  
-    })
-    .catch((err) => {
-      if(err.response)alert(err.response.data.message);
-    
-    });
-    // setTimeout(() => {
-      formik.setSubmitting(false)
-    //   formik.resetForm()
-    // }, 2000);
+    axios
+      .post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data)
+      .then((res) => {
+        alert(res.data.message);
+        navigate("/signIn");
+      })
+      .catch((err) => {
+        if (err.response) alert(err.response.data.message);
+      });
+    formik.setSubmitting(false);
   };
 
   const formik = useFormik({
@@ -70,75 +63,151 @@ export default function SignUp() {
     //handle submission
     onSubmit: doRegister,
   });
-  // console.log(formik);
   const isError = {
     firstName: formik.touched.firstName && formik.errors.firstName,
     lastName: formik.touched.lastName && formik.errors.lastName,
     email: formik.touched.email && formik.errors.email,
     password: formik.touched.password && formik.errors.password,
-    confirmPassword: formik.touched.confirmPassword && formik.errors.confirmPassword,
+    confirmPassword:
+      formik.touched.confirmPassword && formik.errors.confirmPassword,
   };
   return (
     <>
       <Navbar />
       <div className={`${styles.container} container-fluid row mx-auto`}>
-      <div className="col-sm-4 mx-auto" style={{ margin: "100px 0px" }}>
-        <div className="text-center" style={{ marginBottom: "56px" }}>
-          <h3 className={styles.title}>Join us!</h3>
-        </div>
+        <div className="col-sm-4 mx-auto" style={{ margin: "100px 0px" }}>
+          <div className="text-center" style={{ marginBottom: "56px" }}>
+            <h3 className={styles.title}>Join us!</h3>
+          </div>
 
-        <form onSubmit={formik.handleSubmit}>
-          <div className="mb-3">
-            <input type="text" name="firstName" {...formik.getFieldProps("firstName")} className={`${isError.firstName && "border-danger"} form-control`} placeholder="Firs Name" />
-            {isError.firstName && <div className={styles.error}>{formik.errors.firstName}</div>}
-          </div>
-          <div className="mb-3">
-            <input type="text" name="lastName" {...formik.getFieldProps("lastName")} className={`${isError.lastName && "border-danger"} form-control`} placeholder="Last Name" />
-            {isError.lastName && <div className={styles.error}>{formik.errors.lastName}</div>}
-          </div>
-          <div className="mb-3">
-            <input type="text" name="email" {...formik.getFieldProps("email")} className={`${isError.email && "border-danger"} form-control`} placeholder="Email" />
-            {isError.email && <div className={styles.error}>{formik.errors.email}</div>}
-          </div>
-          <div className=" mb-3">
-            <div className={`password d-flex border ${isError.password && "border border-danger"}`} style={{ borderRadius: "5px" }}>
-              <input type={hide ? "text" : "password"} name="password" {...formik.getFieldProps("password")} className={`${isError.password && "border-danger"} form-control`} placeholder="Password" style={{ border: "none" }} />
-              <button
-                className={styles.btn_eye}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setHide(!hide);
-                }}
-              >
-                <img className={styles.icon_eye} src={hide ? hiden : show} />
-              </button>
+          <form onSubmit={formik.handleSubmit}>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="firstName"
+                {...formik.getFieldProps("firstName")}
+                className={`${
+                  isError.firstName && "border-danger"
+                } form-control`}
+                placeholder="Firs Name"
+              />
+              {isError.firstName && (
+                <div className={styles.error}>{formik.errors.firstName}</div>
+              )}
             </div>
-            {isError.password && <div className={styles.error}>{formik.errors.password}</div>}
-          </div>
-          <div className="mb-3">
-            <div className={`password d-flex border ${isError.confirmPassword && "border border-danger"}`} style={{ borderRadius: "5px" }}>
-              <input type={hideComfirm ? "text" : "password"} name="confirmPassword" {...formik.getFieldProps("confirmPassword")} className="form-control" placeholder="Confirm Password" style={{ border: "none" }} />
-              <button
-                className={styles.btn_eye}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setHideComfirm(!hideComfirm);
-                }}
-              >
-                <img className={styles.icon_eye} src={hideComfirm ? hiden : show} />
-              </button>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="lastName"
+                {...formik.getFieldProps("lastName")}
+                className={`${
+                  isError.lastName && "border-danger"
+                } form-control`}
+                placeholder="Last Name"
+              />
+              {isError.lastName && (
+                <div className={styles.error}>{formik.errors.lastName}</div>
+              )}
             </div>
-            {isError.confirmPassword && <div className={styles.error}>{formik.errors.confirmPassword}</div>}
-          </div>
-          <button type="submit" className={styles.btn_submit} disabled={formik.isSubmitting}>
-            Sign Up
-          </button>
-          <a className="nav-link text-center" href="#" style={{ fontWeight: "bold", fontSize: "16px", lineHeight: "25px", color: "#3E89AE" }}>
-            Having issue when signup?
-          </a>
-        </form>
+            <div className="mb-3">
+              <input
+                type="text"
+                name="email"
+                {...formik.getFieldProps("email")}
+                className={`${isError.email && "border-danger"} form-control`}
+                placeholder="Email"
+              />
+              {isError.email && (
+                <div className={styles.error}>{formik.errors.email}</div>
+              )}
+            </div>
+            <div className=" mb-3">
+              <div
+                className={`password d-flex border ${
+                  isError.password && "border border-danger"
+                }`}
+                style={{ borderRadius: "5px" }}
+              >
+                <input
+                  type={hide ? "text" : "password"}
+                  name="password"
+                  {...formik.getFieldProps("password")}
+                  className={`${
+                    isError.password && "border-danger"
+                  } form-control`}
+                  placeholder="Password"
+                  style={{ border: "none" }}
+                />
+                <button
+                  className={styles.btn_eye}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHide(!hide);
+                  }}
+                >
+                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                </button>
+              </div>
+              {isError.password && (
+                <div className={styles.error}>{formik.errors.password}</div>
+              )}
+            </div>
+            <div className="mb-3">
+              <div
+                className={`password d-flex border ${
+                  isError.confirmPassword && "border border-danger"
+                }`}
+                style={{ borderRadius: "5px" }}
+              >
+                <input
+                  type={hideComfirm ? "text" : "password"}
+                  name="confirmPassword"
+                  {...formik.getFieldProps("confirmPassword")}
+                  className="form-control"
+                  placeholder="Confirm Password"
+                  style={{ border: "none" }}
+                />
+                <button
+                  className={styles.btn_eye}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHideComfirm(!hideComfirm);
+                  }}
+                >
+                  <img
+                    className={styles.icon_eye}
+                    src={hideComfirm ? hiden : show}
+                  />
+                </button>
+              </div>
+              {isError.confirmPassword && (
+                <div className={styles.error}>
+                  {formik.errors.confirmPassword}
+                </div>
+              )}
+            </div>
+            <button
+              type="submit"
+              className={styles.btn_submit}
+              disabled={formik.isSubmitting}
+            >
+              Sign Up
+            </button>
+            <a
+              className="nav-link text-center"
+              href="#"
+              style={{
+                fontWeight: "bold",
+                fontSize: "16px",
+                lineHeight: "25px",
+                color: "#3E89AE",
+              }}
+            >
+              Having issue when signup?
+            </a>
+          </form>
+        </div>
       </div>
-    </div>
       <Footer />
     </>
   );

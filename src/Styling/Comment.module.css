@@ -1,5 +1,4 @@
 .commentSection {
-  /* background-color: aquamarine; */
   text-align: left;
   margin-bottom: 25px;
   width: 100%;
@@ -9,7 +8,6 @@
   font-weight: 700;
 }
 .commentWrapper {
-  /* background-color:sandybrown; */
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -18,15 +16,10 @@
   height: 40px;
   border-radius: 100px;
 }
-/* .profile-user{
-   background-color:violet;
-} */
 .imgWrapper {
-  /* background-color:bisque; */
   width: 7%;
 }
 .profilUserName {
-  /* background-color:darkcyan; */
   width: 93%;
 }
 .userName {
@@ -51,10 +44,11 @@
   border-radius: 10px;
 }
 .btnComment {
-  height: 48px;
+  display: flex;
+  justify-content: flex-end;
   background-color: #214457;
   border-radius: 10px;
-  width: 100%;
+  margin-left: 83%;
 }
 .signOut {
   color: white;
@@ -65,4 +59,16 @@
 .commentHeader {
   gap: 5%;
   display: flex;
+}
+.comment_picture {
+  width: 40px;
+  height: 40px;
+  margin-right: 5%;
+}
+.comment_name {
+  font-size: 16px;
+  font-weight: 700;
+}
+.user_container {
+  margin-bottom: 2%;
 }

@@ -9,9 +9,7 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 const DesignEvent = () => {
-  const { events, loading, error } = useSelector(
-    (state) => state.getEventsReducer
-  );
+  const { events } = useSelector((state) => state.getEventsReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
