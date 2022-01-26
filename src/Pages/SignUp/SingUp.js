@@ -8,15 +8,12 @@ import styles from "./../../Styling/SignUp.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-// import { setToken } from "../../Redux/Action/userAction";
 
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
   const [hideComfirm, setHideComfirm] = useState(false);
   const navigate = useNavigate();
-  // const dispatch = useDispatch()
 
   const doRegister = (values) => {
     console.log("form values", values);
@@ -29,7 +26,6 @@ export default function SignUp() {
     };
     axios.post("https://team-b-see-event.herokuapp.com/api/v1/sign/register", data).then((res) => {
       alert(res.data.message)
-      // dispatch(setToken(res.data.result.token))
       navigate("/signIn")  
     })
     .catch((err) => {
@@ -110,7 +106,7 @@ export default function SignUp() {
                   setHide(!hide);
                 }}
               >
-                <img className={styles.icon_eye} src={hide ? hiden : show} />
+                <img className={styles.icon_eye} src={hide ? hiden : show} alt="icon eye"/>
               </button>
             </div>
             {isError.password && <div className={styles.error}>{formik.errors.password}</div>}
@@ -125,7 +121,7 @@ export default function SignUp() {
                   setHideComfirm(!hideComfirm);
                 }}
               >
-                <img className={styles.icon_eye} src={hideComfirm ? hiden : show} />
+                <img className={styles.icon_eye} src={hideComfirm ? hiden : show} alt="icon eye confim"/>
               </button>
             </div>
             {isError.confirmPassword && <div className={styles.error}>{formik.errors.confirmPassword}</div>}

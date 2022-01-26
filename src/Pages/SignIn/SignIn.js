@@ -18,7 +18,6 @@ export default function SignIn() {
   const dispatch = useDispatch();
 
   const doLogin = (values) => {
-    // console.log("form values", values);
     const data = {
       email: values.email,
       password: values.password,
@@ -65,7 +64,7 @@ export default function SignIn() {
     <>
       <Navbar />
       <div className={`${styles.cotainer}container-fluid row mx-auto`}>
-        <div className="col-sm-4 mx-auto" style={{ margin: "100px 0px" }}>
+        <div className="col-sm-4 mx-auto" style={{ margin: "130px 0px" }}>
           <div className="text-center" style={{ marginBottom: "56px" }}>
             <h3 className={styles.title}>Welcome back!</h3>
           </div>
@@ -85,7 +84,7 @@ export default function SignIn() {
                     setHide(!hide);
                   }}
                 >
-                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                  <img className={styles.icon_eye} src={hide ? hiden : show} alt="eye icon"/>
                 </button>
               </div>
               {isError.password && <div className={styles.error}>{formik.errors.password}</div>}

@@ -1,19 +1,23 @@
 import avatar from "../../Assets/icons/avatar.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import styles from "./../../../Styling/NavIsLogin.module.css";
 
 export default function NavIsLogin() {
-
-  const { userReducer}  = useSelector((state) => state);
-  const {token} = userReducer
-
+  const { userReducer } = useSelector((state) => state);
+  const { token } = userReducer;
 
   if (token) {
     return (
-      <a className="navbar-brand" href="/profile">
-        <img alt="logo SeeEvent" src={avatar} width="auto" height="auto" />
-      </a>
+      <div className="d-flex" style={{gap: '1rem'}}>
+        <button className={`${styles.btn_create_event} my-auto`} type="submit" style={{ borderRadius: "99px", width: "184px", height: "40px" }}>
+          Create Event
+        </button>
+        <div className="my-auto" style={{width:'2px', height: '40px', background:'white'}}></div>
+        <a className="navbar-brand" href="/profile">
+          <img alt="logo SeeEvent" src={avatar} width="auto" height="auto" />
+        </a>
+      </div>
     );
   } else {
     return (
@@ -25,8 +29,11 @@ export default function NavIsLogin() {
         <Link to="/signIn" className="nav-link text-white" style={{ fontSize: "20px" }}>
           Sign In
         </Link>
+
+        <button className={`${styles.btn_create_event} my-auto`} type="submit" style={{ borderRadius: "99px", width: "184px", height: "40px" }}>
+          Create Event
+        </button>
       </>
     );
   }
-  
 }

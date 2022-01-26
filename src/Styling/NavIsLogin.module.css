@@ -1,0 +1,9 @@
+.btn_create_event {
+  border-radius: 99px;
+  width: 184px;
+  height: 40px;
+  background: #f2d555;
+  color: #373737;
+  font-weight: bold;
+  font-family: "Noto Sans";
+}
