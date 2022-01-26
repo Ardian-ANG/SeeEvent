@@ -9,7 +9,7 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../Redux/Action/userAction";
+import { setToken, setUser } from "../../Redux/Action/userAction";
 
 
 export default function SignIn() {
@@ -27,8 +27,9 @@ export default function SignIn() {
     axios
       .post("https://team-b-see-event.herokuapp.com/api/v1/sign/login", data)
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         dispatch(setToken(res.data.result.token));
+        dispatch(setUser(JSON.stringify(res.data.result.user)))
         alert(res.data.message)
         navigate("/");
       })

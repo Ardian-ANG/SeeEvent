@@ -6,16 +6,20 @@ import DesignEvent from "./DesignEvent";
 import EventCategory from "./EventCategory";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import Navbar from "../../Components/NavBar/Header/Navbar";
-// import { useSelector } from "react-redux";
 
 export default function Home() {
-  // const {user} = useSelector(state=> state);
-  // console.log(user);
+  
   return (
     <>
       <Navbar />
-      <div className={`container-fluid ${styles.banner}`} style={{ backgroundImage: `url(${bgImg})` }}>
-        <div className={`container ${styles.banner_content}`} style={{ maxWidth: "100%" }}>
+      <div
+        className={`container-fluid ${styles.banner}`}
+        style={{ backgroundImage: `url(${bgImg})` }}
+      >
+        <div
+          className={`container ${styles.banner_content}`}
+          style={{ maxWidth: "100%" }}
+        >
           <div className="textContent me-auto" style={{ marginLeft: "112px" }}>
             <h1 className={styles.title}>
               <span style={{ color: "#F2D555" }}>Create </span>or

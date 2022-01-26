@@ -4,7 +4,23 @@ import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { searchCategory } from "../../Redux/Action/eventsAction";
+
 const SearchPage = () => {
+  const { category } = useSelector((state) => state.getEventsReducer);
+  const dispatch = useDispatch();
+
+  //BAGIAN HAMDANI
+  //JANGAN SENTUH TEDDY
+  useEffect(() => {
+    dispatch(searchCategory(category));
+  }, []);
+  console.log(category);
+  // console.log(dispatch(searchCategory(category)));
+
   return (
     <>
       <Navbar />

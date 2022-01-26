@@ -1,5 +1,7 @@
 
 export const setUser=(user)=>{
+  localStorage.setItem('user', user)
+
   return{
       type: 'SET_USER',
       payload: user
@@ -16,7 +18,7 @@ export const setToken=(token)=>{
 
 export const userLogOut=()=>{
   localStorage.removeItem('token')
-  // localStorage.removeItem('user')
+  localStorage.removeItem('user')
   return{
       type: 'USER_LOGOUT'
   }
