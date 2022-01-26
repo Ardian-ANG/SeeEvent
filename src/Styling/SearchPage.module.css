@@ -1,21 +1,16 @@
-.search_container{
-   /* background-color: salmon; */
-   padding: 60px 100px 60px 100px;
+.search_container {
+  padding: 60px 100px 60px 100px;
 }
-.page_wrapper{
-   /* background-color: aqua; */
-   width:100%;
+.page_wrapper {
+  width: 100%;
 }
-.search_filter{
-   /* background-color: bisque; */
-   border-bottom: 2px solid grey;
+.search_filter {
+  border-bottom: 2px solid grey;
 }
-.filter_by{
-   width:23%;
-   border-radius:50px;
+.filter_by {
+  width: 23%;
+  border-radius: 50px;
 }
-.result_filter{
-   /* background-color: burlywood; */
-   flex-wrap: wrap;
+.result_filter {
+  flex-wrap: wrap;
 }
-
