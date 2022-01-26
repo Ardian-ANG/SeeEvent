@@ -30,16 +30,16 @@ const Search = () => {
       navigate("/search");
     };
 
-   useEffect(()=>{
-         // axios
-         //    .get(
-         //       `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
-         //    )
-         //    .then((res)=>{
-         //       console.log(res.data.result)
-         //    })
+   // useEffect(()=>{
+   //       axios
+   //          .get(
+   //             `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
+   //          )
+   //          .then((res)=>{
+   //             console.log(res.data.result)
+   //          })
    
-   },[keyword])
+   // },[keyword])
 
 
    return (

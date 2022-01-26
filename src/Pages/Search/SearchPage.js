@@ -4,13 +4,13 @@ import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import {useSelector, useDispatch} from 'react-redux';
-// import {getEvent} from './../../Redux/Action/eventAction';
 import { useEffect } from "react";
-import { searchCategory } from "../../Redux/Action/eventsAction";
+import { searchCategory, getEvents, searchEvents } from "../../Redux/Action/eventsAction";
 
 const SearchPage = () => {
+   const dispatch = useDispatch();
+   const {events, search} = useSelector((data) => data.getEventsReducer)
   const { category } = useSelector((state) => state.getEventsReducer);
-  const dispatch = useDispatch();
 
   //BAGIAN HAMDANI
   //JANGAN SENTUH TEDDY
@@ -19,7 +19,15 @@ const SearchPage = () => {
   }, []);
   console.log(category);
   // console.log(dispatch(searchCategory(category)));
+  useEffect(() => {
+   dispatch(getEvents(events));
+ }, []);
+ console.log(events);
 
+ useEffect(() => {
+   dispatch(searchEvents(search));
+ }, []);
+ console.log(search);
 
 return (
     <>
@@ -34,8 +42,8 @@ return (
                      id="floatingSelect"
                      aria-label="Floating label select example"
                   >
-                     <option selected>Open this select menu</option>
-                     <option value="1">All Time</option>
+                     {/* <option selected>Open this select menu</option> */}
+                     <option defaultValue="1">All Time</option>
                      <option value="2">Today</option>
                      <option value="3">Tomorrow</option>
                      <option value="3">This Week</option>
@@ -50,9 +58,9 @@ return (
                      id="floatingSelect"
                      aria-label="Floating label select example"
                   >
-                     <option selected>Open this select menu</option>
-                     <option value="1">All Categories</option>
-                     <option value="2">Photography</option>
+                     {/* <option selected>Open this select menu</option> */}
+                     <option defaultValue="AllCategories">All Categories</option>
+                     <option value="1">Photography</option>
                      <option value="3">Desain</option>
                      <option value="3">Development</option>
                      <option value="3">Marketing</option>
@@ -68,8 +76,8 @@ return (
                      id="floatingSelect"
                      aria-label="Floating label select example"
                   >
-                     <option selected>Open this select menu</option>
-                     <option value="1">Date</option>
+                     {/* <option selected>Open this select menu</option> */}
+                     <option defaultValue="1">Date</option>
                      <option value="2">Name</option>
                   </select>
                   <label for="floatingSelect">Sorting By</label>

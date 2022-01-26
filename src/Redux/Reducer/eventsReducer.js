@@ -12,7 +12,7 @@ import {
 const initialState = {
   events: [],
   attendEvents: [],
-  searchEvents:[],
+  searchEvents: [],
   category: "",
   loading: true,
   error: "",
@@ -44,6 +44,7 @@ export const getEventsReducer = (state = initialState, action) => {
       };
    case SEARCH_EVENTS:
       console.log(state)
+      console.log(action.payload)
       return {
          ...state,
          searchEvents: action.payload,
