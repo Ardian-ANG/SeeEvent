@@ -5,10 +5,11 @@ import moment from "moment";
 
 import MessageCircle from "./../../Assets/icons/MessageCircle.png";
 import style from "./../../Styling/Comment.module.css";
-import { getComment } from "../../Redux/Action/commentAction";
+import { getComment, postComment } from "../../Redux/Action/commentAction";
 
 const Comment = () => {
   const { commentList } = useSelector((state) => state.getCommentReducer);
+  const { token } = useSelector((state) => state.userReducer);
 
   const [newComment, setNewComment] = useState();
 
@@ -26,17 +27,14 @@ const Comment = () => {
     e.preventDefault();
 
     const data = {
-      id: params.id,
       description: newComment,
-      user_id: "",
       event_id: params.id,
-      updatedAt: time,
       createdAt: time,
     };
+
+    dispatch(postComment(data, params.id));
     setNewComment("");
   };
-
-  console.log(commentList);
 
   return (
     <>
@@ -71,9 +69,13 @@ const Comment = () => {
             </div>
           </div>
         ))}
+        <div className={style.user_container}>
+          <img src={MessageCircle} alt="User Profile"></img>
+          <span>User Name</span>
+        </div>
         <form
           className={`${style.commentArea} d-flex flex-column`}
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e)}
         >
           <div className="comment-input">
             <div className="mb-3">
@@ -87,12 +89,7 @@ const Comment = () => {
             </div>
           </div>
           <div className="comment-button text-end">
-            <button
-              type="button"
-              className={`${style.btnComment} btn`}
-              type="submit"
-              value="submit"
-            >
+            <button className={`${style.btnComment} btn`} type="submit">
               <img className="btn-icon" src={MessageCircle} alt="" />
               <span className={style.signOut}>Submit</span>
             </button>
