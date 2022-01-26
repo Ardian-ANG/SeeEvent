@@ -25,7 +25,7 @@ const AttendEvent = () => {
           <h3 className={styles.design_header}>
             Attend Event that Starting Soon
           </h3>
-          <a className={styles.more_event} href="" target={"_blank"}>
+          <a className={styles.more_event} href="" target={"/search"}>
             More Events
           </a>
         </div>
@@ -50,12 +50,8 @@ const AttendEvent = () => {
                     </div>
                   </div>
                   <div className={styles.event_button}>
-                    <a>
-                      <img src={Save} alt="save" />
-                    </a>
-                    <a>
-                      <img src={Share} alt="share" />
-                    </a>
+                    <img src={Save} alt="save" />
+                    <img src={Share} alt="share" />
                   </div>
                 </div>
                 <div className={styles.event_bot}>

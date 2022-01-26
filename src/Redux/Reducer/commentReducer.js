@@ -21,7 +21,7 @@ export const getCommentReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        event: action.payload,
+        commentList: action.payload,
       };
     case GET_COMMENT_FAILED:
       return {

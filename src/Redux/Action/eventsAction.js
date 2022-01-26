@@ -5,8 +5,9 @@ import {
   GET_ATTEND_EVENT_REQUEST,
   GET_ATTEND_EVENT_SUCCES,
   GET_ATTEND_EVENT_FAILED,
+  SEARCH_EVENT_CATEGORY,
 } from "../Store/constant";
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 export const getEvents = () => {
   return (dispatch, getState) => {
@@ -25,8 +26,18 @@ export const getEvents = () => {
 };
 
 export const searchCategory = (category) => {
-  return (dispatch, getState) => {
-    dispatch({ type: "SEARCH_EVENT_CATEGORY", payload: category });
+  return async (dispatch) => {
+    try {
+      const response = await axios(
+        `https://team-b-see-event.herokuapp.com/api/v1/event?category=${category}`
+      );
+      dispatch({
+        type: SEARCH_EVENT_CATEGORY,
+        payload: response.data.result,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
