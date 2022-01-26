@@ -20,7 +20,7 @@ const Comment = () => {
   //GET COMMENT API
   useEffect(() => {
     dispatch(getComment(params.id));
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   //time for comments
   const time = new Date();
@@ -51,12 +51,11 @@ const Comment = () => {
             <div className={style.commentWrapper} key={comment.id}>
               <div className="comment-content">
                 <div
-                  className="profile-user d-flex flex-row"
-                  className={style.commentHeader}
+                  className={`${style.commentHeader} profile-user d-flex flex-row`}
                 >
                   <div className={style.imgWrapper}>
                     <div className={style.imgUser}>
-                      <img src={comment.users?.image} alt="Profil Image" />
+                      <img src={comment.users?.image} alt="Profil" />
                     </div>
                   </div>
                   <div className={style.profilUserName}>
@@ -78,7 +77,7 @@ const Comment = () => {
           <div className={style.user_container}>
             <img
               src={profile.image}
-              alt="User Profile"
+              alt="User"
               className={style.comment_picture}
             />
             <span className={style.comment_name}>
@@ -122,12 +121,11 @@ const Comment = () => {
             <div className={style.commentWrapper} key={comment.id}>
               <div className="comment-content">
                 <div
-                  className="profile-user d-flex flex-row"
-                  className={style.commentHeader}
+                  className={`${style.commentHeader} profile-user d-flex flex-row`}
                 >
                   <div className={style.imgWrapper}>
                     <div className={style.imgUser}>
-                      <img src={comment.users?.image} alt="Profil Image" />
+                      <img src={comment.users?.image} alt="Profil" />
                     </div>
                   </div>
                   <div className={style.profilUserName}>

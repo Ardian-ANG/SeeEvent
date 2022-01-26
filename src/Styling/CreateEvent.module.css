@@ -9,7 +9,6 @@
   margin-left: auto;
   margin-right: auto;
   height: auto;
-  background-color: antiquewhite;
 }
 .title_container {
   display: flex;
@@ -40,7 +39,6 @@
   box-sizing: border-box;
 }
 .input_container {
-  background-color: aquamarine;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -58,9 +56,29 @@
 }
 .title_input,
 .date_input,
-.category_input,
-.detail_input {
+.category_input {
   border-radius: 5px;
   border: 1px solid #999999;
   box-sizing: border-box;
+  line-height: 2rem;
+}
+.detail_input {
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+.create_button {
+  margin-top: 5%;
+  width: 100%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  background: #214457;
+  color: white;
+}
+.link_container {
+  text-align: center;
+}
+.help_link {
+  color: #3e89ae;
 }

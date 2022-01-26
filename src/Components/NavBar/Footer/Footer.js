@@ -22,16 +22,16 @@ const Footer = () => {
             <div
               className={`${style.social_media} d-flex justify-content-between`}
             >
-              <a href="#">
+              <a href={"/"}>
                 <img src={FacebookRound} alt="Facebook" />
               </a>
-              <a href="#">
+              <a href={"/"}>
                 <img src={Instagram} alt="Instagram" />
               </a>
-              <a href="#">
+              <a href={"/"}>
                 <img src={Twitter} alt="Twitter" />
               </a>
-              <a href="#">
+              <a href={"/"}>
                 <img src={Youtube} alt="Youtube" />
               </a>
             </div>
@@ -45,16 +45,16 @@ const Footer = () => {
             <div className={style.link_list}>
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href={"/"}>Home</a>
                 </li>
                 <li>
-                  <a href="#">Explore</a>
+                  <a href={"/"}>Explore</a>
                 </li>
                 <li>
-                  <a href="#">My Events</a>
+                  <a href={"/"}>My Events</a>
                 </li>
                 <li>
-                  <a href="#">Bookmark</a>
+                  <a href={"/"}>Bookmark</a>
                 </li>
               </ul>
             </div>
@@ -64,16 +64,16 @@ const Footer = () => {
             <div className={style.link_categories}>
               <ul>
                 <li>
-                  <a href="#">Design</a>
+                  <a href={"/"}>Design</a>
                 </li>
                 <li>
-                  <a href="#">Photography</a>
+                  <a href={"/"}>Photography</a>
                 </li>
                 <li>
-                  <a href="#">Development</a>
+                  <a href={"/"}>Development</a>
                 </li>
                 <li>
-                  <a href="#">Marketing</a>
+                  <a href={"/"}>Marketing</a>
                 </li>
               </ul>
             </div>
@@ -95,9 +95,9 @@ const Footer = () => {
         </div>
         <div className={`${style.terms} col-6 text-end`}>
           <div className={style.terms_cond}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Helps</a>
+            <a href={"/"}>Privacy Policy</a>
+            <a href={"/"}>Terms of Service</a>
+            <a href={"/"}>Helps</a>
           </div>
         </div>
       </div>

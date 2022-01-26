@@ -100,7 +100,11 @@ export default function SignIn() {
                     setHide(!hide);
                   }}
                 >
-                  <img className={styles.icon_eye} src={hide ? hiden : show} />
+                  <img
+                    className={styles.icon_eye}
+                    src={hide ? hiden : show}
+                    alt="iconic"
+                  />
                 </button>
               </div>
               {isError.password && (
@@ -116,7 +120,7 @@ export default function SignIn() {
             </button>
             <a
               className="nav-link text-center"
-              href="#"
+              href={"/"}
               style={{
                 fontWeight: "bold",
                 fontSize: "16px",

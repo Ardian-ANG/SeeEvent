@@ -2,12 +2,9 @@ import avatar from "../../Assets/icons/avatar.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-
 export default function NavIsLogin() {
-
-  const { userReducer}  = useSelector((state) => state);
-  const {token} = userReducer
-
+  const { userReducer } = useSelector((state) => state);
+  const { token } = userReducer;
 
   if (token) {
     return (
@@ -18,15 +15,22 @@ export default function NavIsLogin() {
   } else {
     return (
       <>
-        <Link to="/signUp" className="nav-link text-white" style={{ fontSize: "20px" }}>
+        <Link
+          to="/signUp"
+          className="nav-link text-white"
+          style={{ fontSize: "20px" }}
+        >
           Sign Up
         </Link>
 
-        <Link to="/signIn" className="nav-link text-white" style={{ fontSize: "20px" }}>
+        <Link
+          to="/signIn"
+          className="nav-link text-white"
+          style={{ fontSize: "20px" }}
+        >
           Sign In
         </Link>
       </>
     );
   }
-  
 }
