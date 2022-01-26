@@ -8,11 +8,6 @@ import styles from "./../../Styling/SignUp.module.css";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-// import { setToken } from "../../Redux/Action/userAction";
-
-=======
->>>>>>> 8651cc0568523bad4ec9b04b18ae96a73a40f43a
 
 export default function SignUp() {
   const [hide, setHide] = useState(false);
