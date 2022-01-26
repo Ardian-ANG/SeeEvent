@@ -5,9 +5,8 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogOut } from "../../Redux/Action/actionUser";
 import { useEffect } from "react";
-import { setUser } from "../../Redux/Action/actionUser";
+import { setUser, userLogOut } from "../../Redux/Action/userAction";
 import axios from "axios";
 
 

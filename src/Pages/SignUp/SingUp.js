@@ -9,7 +9,7 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import { setToken } from "../../Redux/Action/actionUser";
+// import { setToken } from "../../Redux/Action/userAction";
 
 
 export default function SignUp() {

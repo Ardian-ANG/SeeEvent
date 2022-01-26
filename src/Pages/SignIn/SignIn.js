@@ -9,7 +9,8 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken, setUser } from "../../Redux/Action/actionUser";
+import { setToken } from "../../Redux/Action/userAction";
+
 
 export default function SignIn() {
   const [hide, setHide] = useState(false);
