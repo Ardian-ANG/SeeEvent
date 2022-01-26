@@ -9,7 +9,8 @@ import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken, setUser } from "../../Redux/Action/actionUser";
+import { setToken, setUser } from "../../Redux/Action/userAction";
+
 
 export default function SignIn() {
   const [hide, setHide] = useState(false);
@@ -28,19 +29,13 @@ export default function SignIn() {
       .then((res) => {
         console.log(res);
         dispatch(setToken(res.data.result.token));
+        dispatch(setUser(JSON.stringify(res.data.result.user)))
+        alert(res.data.message)
         navigate("/");
-        // axios({
-        //   method: "GET",
-        //   url: "https://team-b-see-event.herokuapp.com/api/v1/account/",
-        //   headers: {
-        //     Authorization: `Bearer ${res.data.result.token}`,
-        //   },
-        // }).then((response) => {
-        //   console.log(response.data.result);
-        //   dispatch(setUser(response.data.result));
-        // });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response) alert(err.response.data.message);
+      });
 
     // setTimeout(() => {
     formik.setSubmitting(false);

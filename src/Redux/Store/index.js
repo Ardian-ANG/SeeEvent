@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import { getEventsReducer } from "../Reducer/eventsReducer";
 import { getEventDetailReducer } from "../Reducer/eventDetailReducer";
 import { getCommentReducer } from "../Reducer/commentReducer";
-import userReducer from "../Reducer";
+import userReducer from "../Reducer/userReducer";
 
 const reducers = combineReducers({
   userReducer,
