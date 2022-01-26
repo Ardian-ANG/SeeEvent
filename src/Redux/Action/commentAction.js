@@ -16,7 +16,6 @@ export const getComment = (id) => {
           type: GET_COMMENT_SUCCES,
           payload: response.data.result,
         });
-        console.log(response.data.result);
       })
       .catch((error) => {
         dispatch({ type: GET_COMMENT_FAILED, payload: error });

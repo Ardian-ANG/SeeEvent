@@ -3,32 +3,22 @@ import Pagination from "./Pagination";
 import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 // import {getEvent} from './../../Redux/Action/eventAction';
-
-
 import { useEffect } from "react";
+import { searchCategory } from "../../Redux/Action/eventsAction";
 
 const SearchPage = () => {
+  const { category } = useSelector((state) => state.getEventsReducer);
+  const dispatch = useDispatch();
 
-// const dispatch = useDispatch();
-const events = useSelector ((data) => data.event.eventList);
-const globalStore = useSelector((data)=>data.getEventsReducer);
-console.log(globalStore)
-
-// console.log(events)
-
-// useEffect(()=>{
-//    dispatch(getEvent());
-// }, [])
-
-const { category } = useSelector((state) => state.getEventsReducer);
-//BAGIAN HAMDANI
-//JANGAN SENTUH TEDDY
-useEffect(() => {
-   // console.log(searchEvents)
-   console.log(category);
-}, []);
+  //BAGIAN HAMDANI
+  //JANGAN SENTUH TEDDY
+  useEffect(() => {
+    dispatch(searchCategory(category));
+  }, []);
+  console.log(category);
+  // console.log(dispatch(searchCategory(category)));
 
 
 return (

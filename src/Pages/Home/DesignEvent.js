@@ -48,12 +48,8 @@ const DesignEvent = () => {
                     </div>
                   </div>
                   <div className={styles.event_button}>
-                    <a>
-                      <img src={Save} alt="save" />
-                    </a>
-                    <a>
-                      <img src={Share} alt="share" />
-                    </a>
+                    <img src={Save} alt="save" />
+                    <img src={Share} alt="share" />
                   </div>
                 </div>
                 <div className={styles.event_bot}>
