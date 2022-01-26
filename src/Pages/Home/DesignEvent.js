@@ -16,14 +16,14 @@ const DesignEvent = () => {
 
   useEffect(() => {
     dispatch(getEvents());
-  }, []);
+  }, [""]);
 
   return (
     <div className={styles.main_container}>
       <div className={styles.wrapper_container}>
         <div className={styles.header_container}>
           <h3 className={styles.design_header}>Design Event</h3>
-          <a className={styles.more_event} href="" target={"_blank"}>
+          <a className={styles.more_event} href={"/search"} target={""}>
             More Events
           </a>
         </div>
@@ -35,11 +35,13 @@ const DesignEvent = () => {
               key={event.id}
               to={`/event/${event.id}`}
             >
-              <img
-                className={styles.event_image}
-                src={event.image}
-                alt="Momo"
-              />
+              <div className={styles.image_container}>
+                <img
+                  className={styles.event_image}
+                  src={event.image}
+                  alt="Momo"
+                />
+              </div>
               <div className={styles.event_container}>
                 <div className={styles.event_top}>
                   <div className={styles.category_container}>
