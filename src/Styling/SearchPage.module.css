@@ -14,11 +14,8 @@
    width:23%;
    border-radius:50px;
 }
-/* .result_filter{
-   background-color: burlywood;
+.result_filter{
+   /* background-color: burlywood; */
    flex-wrap: wrap;
 }
-.card_event{
-   width:23%;
-   border-radius:10px;
-} */
+
