@@ -6,11 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogOut } from "../../Redux/Action/userAction";
 
-
 const Profile = () => {
-  const {userReducer} = useSelector(state=>state)
-  const { user} = userReducer;
-  const profil = JSON.parse(user)
+  const { userReducer } = useSelector((state) => state);
+  const { user } = userReducer;
+  const profil = JSON.parse(user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -27,7 +26,9 @@ const Profile = () => {
           <img className={style.imgProfile} src={profil.image} alt="..." />
         </div>
         <div className="profileInfo text-center">
-          <h3 className={style.profileName}>{profil.first_name} {profil.last_name}</h3>
+          <h3 className={style.profileName}>
+            {profil.first_name} {profil.last_name}
+          </h3>
           <p className={style.profileEmail}>{profil.email}</p>
         </div>
         <div className={`${style.signOutBtn} text-center`}>

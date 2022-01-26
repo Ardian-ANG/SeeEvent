@@ -19,3 +19,33 @@
   line-height: 72px;
   letter-spacing: 2px;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 56px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+  }
+  .banner_content {
+    padding-top: 20rem;
+    
+    height: 100%;
+    display: block;
+  }   
+}
+
+@media(max-width:425px){
+  .title {
+    font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+  }
+  .banner_content {
+    padding-top: 20rem;
+    
+    height: 100%;
+    display: block;
+  }   
+}

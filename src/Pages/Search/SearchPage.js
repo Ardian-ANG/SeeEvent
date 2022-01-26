@@ -32,7 +32,7 @@ const SearchPage = () => {
     } else if (searchEvents) {
       dispatch(searchEvent(searchEvents));
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     console.log(categoryEvents);

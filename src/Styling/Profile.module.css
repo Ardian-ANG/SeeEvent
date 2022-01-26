@@ -1,33 +1,33 @@
-.imgProfile{
-   width:130px;
-   height:130px;
-   border-radius: 100px;
-   margin-top: 59px;
-   margin-bottom: 12px;
+.imgProfile {
+  width: 130px;
+  height: 130px;
+  border-radius: 100px;
+  margin-top: 59px;
+  margin-bottom: 12px;
 }
-.profileName{
-   margin-bottom:8px;
+.profileName {
+  margin-bottom: 8px;
 }
-.profileEmail{
-   margin-bottom:24px;
+.profileEmail {
+  margin-bottom: 24px;
 }
-.signOutBtn{
-   margin-bottom: 120px;
+.signOutBtn {
+  margin-bottom: 120px;
 }
-.btnSignOut{
-   width:184px;
-   height:48px;
-   background-color: white;
-   border: 1px solid #214457;
-   border-radius:10px;
+.btnSignOut {
+  width: 184px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #214457;
+  border-radius: 10px;
 }
-.btnIcon{
-   margin-right:25px;
+.btnIcon {
+  margin-right: 25px;
 }
-.signOut{
-   margin-right:18px;
-   margin-left:13px;
-   font-size:18px;
-   font-weight:700;
-   color:#214457;
+.signOut {
+  margin-right: 18px;
+  margin-left: 13px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #214457;
 }

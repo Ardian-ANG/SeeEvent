@@ -91,3 +91,15 @@
   margin-top: 2%;
   margin-bottom: 5%;
 }
+
+@media (max-width: 700px) {
+  .first_category,
+  .second_category,
+  .third_category,
+  .fourth_category,
+  .fifth_category,
+  .sixth_category,
+  .seventh_category {
+    font-size: 14px;
+  }
+}

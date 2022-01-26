@@ -11,5 +11,3 @@ const ButtonSearch = (props) => {
 };
 
 export default ButtonSearch;
-
-// style={props.style}

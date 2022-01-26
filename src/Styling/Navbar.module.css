@@ -2,3 +2,10 @@
   height: 112px;
   font-family: "Noto Sans";
 }
+
+@media(max-width:768px){
+
+ .container{
+   max-width: 75%;
+ } 
+}
