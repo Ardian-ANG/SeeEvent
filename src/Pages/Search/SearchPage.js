@@ -3,24 +3,36 @@ import Pagination from "./Pagination";
 import NotFind from "./NotFound";
 import Navbar from "../../Components/NavBar/Header/Navbar";
 import Footer from "../../Components/NavBar/Footer/Footer";
-// import {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 // import {getEvent} from './../../Redux/Action/eventAction';
 
+
+import { useEffect } from "react";
 
 const SearchPage = () => {
 
 // const dispatch = useDispatch();
 const events = useSelector ((data) => data.event.eventList);
+const globalStore = useSelector((data)=>data.getEventsReducer);
+console.log(globalStore)
 
-console.log(events)
+// console.log(events)
 
 // useEffect(()=>{
 //    dispatch(getEvent());
 // }, [])
 
+const { category } = useSelector((state) => state.getEventsReducer);
+//BAGIAN HAMDANI
+//JANGAN SENTUH TEDDY
+useEffect(() => {
+   // console.log(searchEvents)
+   console.log(category);
+}, []);
+
+
 return (
-   <>
+    <>
       <Navbar />
          <div className={`${style.search_container} d-flex bd-highlight`}>
             <div className={`${style.page_wrapper} d-flex flex-column`}>

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./Pages/Home/Home";
@@ -25,7 +25,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/event" element={<EventDetail />} />
+        <Route path="/event/:id" element={<EventDetail />} />
         <Route path="/createEvent" element={<CreateEvent />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<Error />} />

@@ -25,3 +25,14 @@
   line-height: 16px;
   color: #D74545;
 }
+
+.btn_eye {
+  border: none;
+  background: none;
+}
+
+.icon_eye {
+  width: auto;
+  height: 25px;
+  margin-right: 5px;
+}
