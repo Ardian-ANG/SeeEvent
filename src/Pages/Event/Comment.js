@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { useParams, useResolvedPath } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import moment from "moment";
 
 import MessageCircle from "./../../Assets/icons/MessageCircle.png";
@@ -8,11 +8,8 @@ import style from "./../../Styling/Comment.module.css";
 import { getComment } from "../../Redux/Action/commentAction";
 
 const Comment = () => {
-  const { commentList, loading, error } = useSelector(
-    (state) => state.getCommentReducer
-  );
+  const { commentList } = useSelector((state) => state.getCommentReducer);
 
-  const [newCommentList, setNewCommentList] = useState();
   const [newComment, setNewComment] = useState();
 
   const dispatch = useDispatch();
@@ -22,12 +19,20 @@ const Comment = () => {
     dispatch(getComment(params.id));
   }, []);
 
-  //setting time for comment with moment.js
-  // const commentTime = moment(event.datetime).startOf("day").fromNow();
+  //time for comments
+  const time = new Date();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNewCommentList([...commentList, newComment]);
+
+    const data = {
+      id: params.id,
+      description: newComment,
+      user_id: "",
+      event_id: params.id,
+      updatedAt: time,
+      createdAt: time,
+    };
     setNewComment("");
   };
 
