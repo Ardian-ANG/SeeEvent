@@ -3,7 +3,7 @@ import moment from "moment";
 
 const Pagination = (props) => {
   return (
-    <div className={`${style.card_event} card`} key={props.id}>
+    <div className={`${style.card_event} card`}>
       <img
         src={props.image}
         className={`${style.img_card} card-img-top`}

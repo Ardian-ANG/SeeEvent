@@ -14,6 +14,8 @@ const initialState = {
   attendEvents: [],
   searchEvents: [],
   categoryEvents: [],
+  dateEvents:[],
+  sortEvents:[],
   category: "",
   loading: true,
   error: "",
@@ -52,6 +54,16 @@ export const getEventsReducer = (state = initialState, action) => {
       return {
         ...state,
         searchEvents: action.payload,
+      };
+    case "FILTER_BY_DATE":
+      return {
+         ...state,
+         dateEvents: action.payload,
+      };
+   case "SORT_BY":
+      return {
+         ...state,
+         sortEvents: action.payload,
       };
     case GET_ATTEND_EVENT_REQUEST:
       return {

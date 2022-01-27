@@ -32,11 +32,11 @@ export const changeCategory = (category) => {
   };
 };
 
-export const searchCategory = (category) => {
+export const searchCategory = (select) => {
   return async (dispatch) => {
     try {
       const response = await axios(
-        `https://team-b-see-event.herokuapp.com/api/v1/event?category=${category}`
+        `https://team-b-see-event.herokuapp.com/api/v1/event?category=${select}`
       );
       dispatch({
         type: SEARCH_EVENT_CATEGORY,
@@ -66,7 +66,7 @@ export const getAttendEvent = () => {
   };
 };
 
-export const searchEvents = (keyword) => {
+export const searchEvent = (keyword) => {
   return async (dispatch) => {
     try {
       const response = await axios(
@@ -83,16 +83,37 @@ export const searchEvents = (keyword) => {
   };
 };
 
-// return (dispatch) => {
-//    dispatch({type: SEARCH_EVENTS});
+export const filterByDate = (filter) => {
+   return async (dispatch) => {
+     try {
+       const response = await axios(
+         `https://team-b-see-event.herokuapp.com/api/v1/event?date=${filter}`
+       );
+       const event = response.data.result;
+       dispatch({
+         type: "FILTER_BY_DATE",
+         payload: event,
+       });
+     } catch (error) {
+       console.log(error);
+     }
+   };
+ };
 
-//    axios
-//    .get(
-//       `https://team-b-see-event.herokuapp.com/api/v1/event?keyword=${keyword}`
-//    )
-//    .then((response) => {
-//       console.log(response.data.result)
-//       // const events = response.data.result;
-//       dispatch({ type: SEARCH_EVENTS, payload: response.data.result });
-//    })
-// }
+ export const sortBy = (sort) => {
+   return async (dispatch) => {
+     try {
+       const response = await axios(
+         `https://team-b-see-event.herokuapp.com/api/v1/event?sort=${sort}`
+       );
+       const event = response.data.result;
+       dispatch({
+         type: "SORT_BY",
+         payload: event,
+       });
+     } catch (error) {
+       console.log(error);
+     }
+   };
+ };
+
